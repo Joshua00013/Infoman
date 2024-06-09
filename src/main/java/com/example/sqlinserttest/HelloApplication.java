@@ -1,13 +1,18 @@
 package com.example.sqlinserttest;
 
+import com.example.sqlinserttest.pazz;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.sql.*;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class HelloApplication extends Application {
 
@@ -18,14 +23,32 @@ public class HelloApplication extends Application {
     }
 
     @Override
-    public void start(Stage mainstage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("formgui.fxml"));
-        mainstage.setScene(new Scene(root));
-        mainstage.show();
+    public void start(Stage stage) {
+        // Establish database connection
+        establishConnection();
+
+        Label nameLabel = new Label("Name:");
+        TextField nameField = new TextField();
+        Button addButton = new Button("Add Student");
+
+        addButton.setOnAction(event -> {
+            String name = nameField.getText();
+            if (!name.isEmpty()) {
+                // Insert student into the database
+                addStudent(name);
+                nameField.clear();
+            }
+        });
+
+        VBox root = new VBox(10, nameLabel, nameField, addButton);
+        root.setPrefSize(320, 240);
+        stage.setTitle("Hello!");
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
-    public void establishConnection() {
-        String url = "jdbc:mysql://localhost:3306/scholarshipdb";
+    private void establishConnection() {
+        String url = "jdbc:mysql://localhost:3306/test";
         String user = "root";
         String password = pazz.myPassword; //insert password here
 
@@ -36,85 +59,21 @@ public class HelloApplication extends Application {
 
         } catch (ClassNotFoundException | SQLException e) { //display an error if connection is not successful
             e.printStackTrace();
-            System.err.println("Error establishing connection to database");
         }
     }
 
-    int addApplicant(String name, String scholarshipID, String sex, String birthDate, String birthPlace,
-                      String citizenship, String dualCitizenshipStatus, String contactNo, String emailAddress,
-                      String permAddress, int noSiblings, int birthOrder, String course, String uniName,
-                      String uniAddress, String passportStatus) {
-        String query = "INSERT INTO applicant (Name, ScholarshipID, Sex, Birthday, BirthPlace, Citizenship, " +
-                "DualCitizStatus, ContactNo, EmailAddress, PermAddress, NoSiblings, BirthOrder, Course, " +
-                "UnivName, UnivAddress, PassportStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private void addStudent(String name) {
+        String query = "INSERT INTO student (Name) VALUES (?)"; // Value is set to ? as  sql placeholder
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
-            preparedStatement.setString(1, name);
-            preparedStatement.setString(2, scholarshipID);
-            preparedStatement.setString(3, sex);
-            preparedStatement.setDate(4, java.sql.Date.valueOf(birthDate)); // Convert LocalDate to java.sql.Date
-            preparedStatement.setString(5, birthPlace);
-            preparedStatement.setString(6, citizenship);
-            preparedStatement.setString(7, dualCitizenshipStatus);
-            preparedStatement.setString(8, contactNo);
-            preparedStatement.setString(9, emailAddress);
-            preparedStatement.setString(10, permAddress);
-            preparedStatement.setInt(11, noSiblings);
-            preparedStatement.setInt(12, birthOrder);
-            preparedStatement.setString(13, course);
-            preparedStatement.setString(14, uniName);
-            preparedStatement.setString(15, uniAddress);
-            preparedStatement.setString(16, passportStatus);
-
-            preparedStatement.executeUpdate();
-            System.out.println("Applicant added successfully!");
-
-            try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
-                if (generatedKeys.next()) {
-                    int applicantId = generatedKeys.getInt(1);
-                    return applicantId;
-                } else {
-                    throw new SQLException("Creating applicant failed, no ID obtained.");
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return -1;
-        }
-    }
-    void addParentDetails(int applicantId, MyController controller, String parentName, String education, String occupation, String income) {
-        String query = "INSERT INTO parentguardian_info (ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, AnnualIncome) " +
-                "VALUES (?, ?, ?, ?, ?, ?)";
-
-        String relationship = null;
-
-        // Determine parent name and relationship based on the text fields
-        if (parentName != null) {
-            if (parentName.equals(controller.getMotherName())) {
-                relationship = "Mother";
-            } else if (parentName.equals(controller.getFatherName())) {
-                relationship = "Father";
-            } else if (parentName.equals(controller.getGuardianName())) {
-                relationship = "Guardian";
-            }
-        }
-
+        // set the object preparedStatement's value as the compiled version (for sql) of the variable query statement
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-            preparedStatement.setInt(1, applicantId);
-            preparedStatement.setString(2, relationship);
-            preparedStatement.setString(3, parentName);
-            preparedStatement.setString(4, education);
-            preparedStatement.setString(5, occupation);
-            preparedStatement.setString(6, income);
-
-            preparedStatement.executeUpdate();
-            System.out.println("Parent details added successfully!");
-        } catch (SQLException e) {
+            preparedStatement.setString(1, name); // set the first placeholder '?' as variable name
+            preparedStatement.executeUpdate(); // execute the statement into the database
+            System.out.println("Student added successfully!"); //console message to indicate if student is added
+        } catch (SQLException e) { //display an error if there's an exception with the statement
             e.printStackTrace();
         }
     }
-
-
 
     @Override
     public void stop() {
