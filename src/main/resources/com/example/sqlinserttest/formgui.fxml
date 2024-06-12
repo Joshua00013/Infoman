@@ -66,5 +66,7 @@
       <TextField fx:id="gOccu" layoutX="391.0" layoutY="639.0" />
       <TextField fx:id="gIncome" layoutX="570.0" layoutY="639.0" />
       <Text fx:id="gIncomeLabel" layoutX="570.0" layoutY="625.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annual Income" />
+      <TextField fx:id="gRelation" layoutX="753.0" layoutY="639.0" />
+      <Text layoutX="753.0" layoutY="626.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Relationship" />
    </children>
 </AnchorPane>

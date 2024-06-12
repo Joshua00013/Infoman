@@ -1,5 +1,5 @@
 package com.example.sqlinserttest;
 
 public class pazz {
-    public static String myPassword = "";
+    public static String myPassword = "08192000";
 }

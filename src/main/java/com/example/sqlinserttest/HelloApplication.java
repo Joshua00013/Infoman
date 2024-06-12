@@ -94,10 +94,29 @@ public class HelloApplication extends Application {
                 relationship = "Mother";
             } else if (parentName.equals(controller.getFatherName())) {
                 relationship = "Father";
-            } else if (parentName.equals(controller.getGuardianName())) {
-                relationship = "Guardian";
             }
         }
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, applicantId);
+            preparedStatement.setString(2, relationship);
+            preparedStatement.setString(3, parentName);
+            preparedStatement.setString(4, education);
+            preparedStatement.setString(5, occupation);
+            preparedStatement.setString(6, income);
+
+            preparedStatement.executeUpdate();
+            System.out.println("Parent details added successfully!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    void addParentDetails(int applicantId, MyController controller, String parentName, String education, String occupation, String income, String relationship) {
+        String query = "INSERT INTO parentguardian_info (ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, AnnualIncome) " +
+                "VALUES (?, ?, ?, ?, ?, ?)";
+
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, applicantId);
