@@ -181,7 +181,7 @@ public class MyController implements Initializable {
         application.addParentDetails(applicantID, this,fName.getText(),fEdu.getText(), fOccu.getText(), fIncome.getText());
 
         if (!gEdu.getText().isEmpty()) {
-            application.addParentDetails(applicantID, this, fName.getText(), gEdu.getText(), gOccu.getText(), gIncome.getText(), gRelation.getText());
+            application.addParentDetails(applicantID, this, gName.getText(), gEdu.getText(), gOccu.getText(), gIncome.getText(), gRelation.getText());
         }
         // clearFields(); create a clearfields function
     }
