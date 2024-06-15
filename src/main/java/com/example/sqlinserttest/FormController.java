@@ -2,165 +2,127 @@ package com.example.sqlinserttest;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class MyController implements Initializable {
+public class FormController implements Initializable {
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
+    public void switchToHomepage1(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     private TextField name;
-    @FXML
-    private Text nameLabel;
 
     @FXML
     private ChoiceBox<String> scholarshipChoiceBox;
     private String[] scholarshipop = {"RA 10612","RA 7687","MERIT"};
-    @FXML
-    private Text scholarshipLabel;
 
     @FXML
     private ChoiceBox<String> sexChoiceBox;
     private String[] sexop = {"M","F"};
-    @FXML
-    private Text sexLabel;
 
     @FXML
     private DatePicker birthdayPicker;
-    @FXML
-    private Text birthdayLabel;
 
     // Additional fields and methods
     @FXML
     private TextField birthOrder;
-    @FXML
-    private Text birthOrderLabel;
 
     @FXML
     private TextField birthplace;
-    @FXML
-    private Text birthplaceLabel;
 
     @FXML
     private TextField citizenship;
-    @FXML
-    private Text citizenshipLabel;
 
     @FXML
     private TextField contactno;
-    @FXML
-    private Text contactnoLabel;
 
     @FXML
     private TextField course;
-    @FXML
-    private Text courseLabel;
 
     @FXML
     private ChoiceBox<String> dualCitizStatusChoiceBox;
     private String[] dualCitizStatusop = {"Yes","No"};
-    @FXML
-    private Text dualCitizStatusLabel;
 
     @FXML
     private TextField email;
-    @FXML
-    private Text emailLabel;
 
     @FXML
     private TextField fEdu;
-    @FXML
-    private Text fEduLabel;
 
     @FXML
     private TextField fIncome;
-    @FXML
-    private Text fIncomeLabel;
 
     @FXML
     private TextField fName;
-    @FXML
-    private Text fNameLabel;
 
     @FXML
     private TextField fOccu;
-    @FXML
-    private Text fOccuLabel;
 
     @FXML
     private TextField gEdu;
-    @FXML
-    private Text gEduLabel;
 
     @FXML
     private TextField gIncome;
-    @FXML
-    private Text gIncomeLabel;
 
     @FXML
     private TextField gName;
-    @FXML
-    private Text gNameLabel;
 
     @FXML
     private TextField gOccu;
-    @FXML
-    private Text gOccuLabel;
+
     @FXML
     private TextField gRelation;
 
     @FXML
     private TextField mEdu;
-    @FXML
-    private Text mEduLabel;
 
     @FXML
     private TextField mIncome;
-    @FXML
-    private Text mIncomeLabel;
 
     @FXML
     private TextField mName;
-    @FXML
-    private Text mNameLabel;
 
     @FXML
     private TextField mOccu;
-    @FXML
-    private Text mOccuLabel;
 
     @FXML
     private ChoiceBox<String> passport;
     private String[] passportop = {"Yes","No"};
-    @FXML
-    private Text passportLabel;
 
     @FXML
     private TextField permAddress;
-    @FXML
-    private Text permAddressLabel;
 
     @FXML
     private TextField siblings;
-    @FXML
-    private Text siblingsLabel;
 
     @FXML
     private TextField uniAddress;
-    @FXML
-    private Text uniAddressLabel;
 
     @FXML
     private TextField uniname;
-    @FXML
-    private Text uninameLabel;
 
     @FXML
     void submit(MouseEvent event) {
@@ -185,6 +147,8 @@ public class MyController implements Initializable {
         }
         // clearFields(); create a clearfields function
     }
+
+
     public String getMotherName() {
         return mName.getText();
     }

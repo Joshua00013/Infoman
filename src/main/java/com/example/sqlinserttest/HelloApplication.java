@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage mainstage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("formgui.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Homepage.fxml"));
         mainstage.setScene(new Scene(root));
         mainstage.show();
     }
@@ -82,7 +82,7 @@ public class HelloApplication extends Application {
             return -1;
         }
     }
-    void addParentDetails(int applicantId, MyController controller, String parentName, String education, String occupation, String income) {
+    void addParentDetails(int applicantId, FormController controller, String parentName, String education, String occupation, String income) {
         String query = "INSERT INTO parentguardian_info (ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, AnnualIncome) " +
                 "VALUES (?, ?, ?, ?, ?, ?)";
 
@@ -113,7 +113,7 @@ public class HelloApplication extends Application {
     }
 
 
-    void addParentDetails(int applicantId, MyController controller, String parentName, String education, String occupation, String income, String relationship) {
+    void addParentDetails(int applicantId, FormController controller, String parentName, String education, String occupation, String income, String relationship) {
         String query = "INSERT INTO parentguardian_info (ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, AnnualIncome) " +
                 "VALUES (?, ?, ?, ?, ?, ?)";
 
