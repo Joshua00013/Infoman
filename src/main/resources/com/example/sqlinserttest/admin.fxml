@@ -7,6 +7,6 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminController">
    <children>
       <Text layoutX="265.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is Admin" />
-      <Button layoutX="510.0" layoutY="340.0" mnemonicParsing="false" onAction="#switchToForm1" text="Back" />
+      <Button layoutX="510.0" layoutY="340.0" mnemonicParsing="false" onAction="#switchToHomepage1" text="Back" />
    </children>
 </AnchorPane>
