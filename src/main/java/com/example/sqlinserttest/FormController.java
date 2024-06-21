@@ -10,7 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -41,7 +40,7 @@ public class FormController implements Initializable {
 
     @FXML
     private ChoiceBox<String> sexChoiceBox;
-    private String[] sexop = {"M","F"};
+    private final String[] sexop = {"M","F"};
 
     @FXML
     private DatePicker birthdayPicker;
@@ -64,7 +63,7 @@ public class FormController implements Initializable {
 
     @FXML
     private ChoiceBox<String> dualCitizStatusChoiceBox;
-    private String[] dualCitizStatusop = {"Yes","No"};
+    private final String[] dualCitizStatusop = {"Yes","No"};
 
     @FXML
     private TextField email;
@@ -125,25 +124,24 @@ public class FormController implements Initializable {
     private TextField uniname;
 
     @FXML
-    void submit(MouseEvent event) {
-        HelloApplication application = new HelloApplication();
-        application.establishConnection();
+    void submit(ActionEvent event) {
+        DBUtils.establishConnection();
 
         String selectedScholarship = scholarshipChoiceBox.getValue();
         String selectedSex = sexChoiceBox.getValue();
         LocalDate selectedBirthday = birthdayPicker.getValue();
 
-        int applicantID = application.addApplicant(name.getText(), selectedScholarship, selectedSex, selectedBirthday.toString(),
-                birthplace.getText(), citizenship.getText(), dualCitizStatusChoiceBox.getValue().toString(),
+        int applicantID = DBUtils.addApplicant(name.getText(), selectedScholarship, selectedSex, selectedBirthday.toString(),
+                birthplace.getText(), citizenship.getText(), dualCitizStatusChoiceBox.getValue(),
                 contactno.getText(), email.getText(), permAddress.getText(),
                 Integer.parseInt(siblings.getText()), Integer.parseInt(birthOrder.getText()), course.getText(),
-                uniname.getText(), uniAddress.getText(), passport.getValue().toString());
+                uniname.getText(), uniAddress.getText(), passport.getValue());
 
-        application.addParentDetails(applicantID, this,mName.getText(), mEdu.getText(), mOccu.getText(), mIncome.getText());
-        application.addParentDetails(applicantID, this,fName.getText(),fEdu.getText(), fOccu.getText(), fIncome.getText());
+        DBUtils.addParentDetails(applicantID, this,mName.getText(), mEdu.getText(), mOccu.getText(), mIncome.getText());
+        DBUtils.addParentDetails(applicantID, this,fName.getText(),fEdu.getText(), fOccu.getText(), fIncome.getText());
 
         if (!gEdu.getText().isEmpty()) {
-            application.addParentDetails(applicantID, this, gName.getText(), gEdu.getText(), gOccu.getText(), gIncome.getText(), gRelation.getText());
+            DBUtils.addParentDetails(applicantID, this, gName.getText(), gEdu.getText(), gOccu.getText(), gIncome.getText(), gRelation.getText());
         }
         // clearFields(); create a clearfields function
     }
@@ -155,10 +153,6 @@ public class FormController implements Initializable {
 
     public String getFatherName() {
         return fName.getText();
-    }
-
-    public String getGuardianName() {
-        return gName.getText();
     }
 
     @Override
