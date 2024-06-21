@@ -143,7 +143,7 @@ public class FormController implements Initializable {
         if (!gEdu.getText().isEmpty()) {
             DBUtils.addParentDetails(applicantID, this, gName.getText(), gEdu.getText(), gOccu.getText(), gIncome.getText(), gRelation.getText());
         }
-        // clearFields(); create a clearfields function
+        DBUtils.closeConnection();
     }
 
 
