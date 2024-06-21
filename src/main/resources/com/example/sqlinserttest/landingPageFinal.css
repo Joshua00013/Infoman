@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+/* FONTS */
+.encode-sans-expanded-semibold {
+    -fx-font-family: "Encode Sans Expanded", sans-serif;
+    -fx-font-weight: 600;
+    -fx-font-style: normal;
+  }
+
+
+/* TOP BAR BG */
+.topBarBG{
+    -fx-background-color: #000000
+
+}
+
+
+
+/* MINIMIZE */
+.minimize {
+    -fx-background-color: transparent; 
+    -fx-cursor: hand; 
+}
+
+.minimize:hover {
+    -fx-background-color: #cccccc; 
+}
+
+
+/* MAXIMIZE */
+.maximize {
+    -fx-background-color: transparent; 
+    -fx-cursor: hand; 
+}
+
+.maximize:hover {
+    -fx-background-color: #cccccc; 
+}
+
+
+
+/* CLOSE */
+.close {
+    -fx-background-color: transparent; 
+    -fx-cursor: hand; 
+}
+
+.close:hover {
+    -fx-background-color: #cf0f0f; 
+}
+
+

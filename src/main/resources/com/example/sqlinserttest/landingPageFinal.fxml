@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane layoutX="-4.0" layoutY="1.0" prefHeight="36.0" prefWidth="1282.0" styleClass="topBarBG" stylesheets="@landingPageFinal.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="119.0" layoutY="-1.0" prefHeight="38.0" prefWidth="387.0" text="Department of Science and Technology" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="20.0" fitWidth="26.0" layoutX="72.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../../Users/63936/Downloads/DOST_WITH_TEXT.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="1208.0" layoutY="5.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="34.0" styleClass="close" stylesheets="@landingPageFinal.css">
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../resources/icons/close.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="1182.0" layoutY="5.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="34.0" styleClass="maximize" stylesheets="@landingPageFinal.css" />
+                  <Button layoutX="1156.0" layoutY="5.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="32.0" styleClass="minimize" stylesheets="@landingPageFinal.css" />
+                  <ImageView fitHeight="18.0" fitWidth="17.0" layoutX="1190.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../resources/icons/wide.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="21.0" fitWidth="23.0" layoutX="1161.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../resources/icons/minimize.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="781.0" fitWidth="1286.0" layoutX="-5.0" layoutY="13.0" pickOnBounds="true" AnchorPane.bottomAnchor="-15.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="0.0">
+               <image>
+                  <Image url="@../../../../../../../resources/background/Blue%20and%20Yellow%20Modern%20Medical%20Clinic%20Contact%20Us%20Desktop%20Prototype.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="423.0" layoutY="299.0" stylesheets="@landingPageFinal.css" text="DOST-SEI" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="86.0" />
+               </font>
+            </Label>
+            <Label layoutX="337.0" layoutY="372.0" styleClass="encode-sans-expanded-semibold" stylesheets="@landingPageFinal.css" text="APPLICATION" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="86.0" />
+               </font>
+            </Label>
+            <Label layoutX="362.0" layoutY="500.0" text="Welcome to the official DOST-SEI Application Platform! To get started, click" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="374.0" layoutY="513.0" text="any of the following options below. For frequently asked questions or to " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="434.0" layoutY="525.0" text="know more about us, click on the top-right corner." textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="420.0" layoutY="628.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="160.0" text="APPLY NOW" />
+            <Button layoutX="697.0" layoutY="628.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="160.0" text="ADMIN" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
