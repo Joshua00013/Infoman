@@ -1,0 +1,27 @@
+/* APPLY AND ADMIN BUTTON */
+.button {
+    -fx-background-color: radial-gradient(to bottom right, #8c8c8c, #f2f2f2);
+    -fx-cursor: hand; /* JavaFX-specific property */
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom right, #a0a0a0, #dcdcdc);
+}
+
+/* MAIN BACKGROUND */
+.mainBG{
+    -fx-background-color: linear-gradient(to bottom right, #000000, #3533CD);
+    -fx-border-color:#000;
+    -fx-border-width:.4px 0px .4px .4px;
+
+}
+
+/* CLOSE */
+.close {
+    -fx-background-color: transparent; 
+    -fx-cursor: hand; 
+}
+
+.close:hover {
+    -fx-background-color: #cf0f0f; 
+}
