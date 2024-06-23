@@ -21,8 +21,8 @@ public class HomepageController {
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToAdmin1(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("admin.fxml"));
+    public void switchToAdminLogin(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("adminLogin.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
