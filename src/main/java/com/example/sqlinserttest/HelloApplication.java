@@ -5,9 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-
+import javafx.stage.StageStyle;
 
 public class HelloApplication extends Application {
 
@@ -19,6 +17,7 @@ public class HelloApplication extends Application {
     public void start(Stage mainstage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Homepage.fxml"));
         mainstage.setScene(new Scene(root));
+        mainstage.initStyle(StageStyle.UNDECORATED);
         mainstage.show();
     }
 
