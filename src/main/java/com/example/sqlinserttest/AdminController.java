@@ -13,9 +13,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.LocalDateStringConverter;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -81,6 +85,35 @@ public class AdminController implements Initializable {
 
     @FXML
     private TableColumn<applicant, String> passportStatusCol;
+
+    @FXML
+    private ImageView closebtn;
+
+    @FXML
+    private ImageView mnmbtn;
+
+    @FXML
+    private ImageView mxmbtn;
+
+    @FXML
+    void closeclick(MouseEvent event) {
+        javafx.application.Platform.exit();
+    }
+
+    @FXML
+    void mnmclick(MouseEvent event) {
+        Stage stage = (Stage) mnmbtn.getScene().getWindow();
+        stage.setIconified(true);
+    }
+
+    @FXML
+    void mxmclick(MouseEvent event) {
+        Stage stage = (Stage) mxmbtn.getScene().getWindow();
+        if (stage.isMaximized()){
+            stage.setMaximized(false);
+        }else {stage.setMaximized(true);
+        }
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

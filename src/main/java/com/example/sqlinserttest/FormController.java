@@ -10,6 +10,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -122,6 +124,36 @@ public class FormController implements Initializable {
 
     @FXML
     private TextField uniname;
+
+    @FXML
+    private ImageView closebtn;
+
+    @FXML
+    private ImageView mnmbtn;
+
+    @FXML
+    private ImageView mxmbtn;
+
+    @FXML
+    void closeclick(MouseEvent event) {
+        javafx.application.Platform.exit();
+    }
+
+    @FXML
+    void mnmclick(MouseEvent event) {
+        Stage stage = (Stage) mnmbtn.getScene().getWindow();
+        stage.setIconified(true);
+    }
+
+    @FXML
+    void mxmclick(MouseEvent event) {
+        Stage stage = (Stage) mxmbtn.getScene().getWindow();
+        if (stage.isMaximized()){
+            stage.setMaximized(false);
+        }else {stage.setMaximized(true);
+        }
+    }
+
 
     @FXML
     void submit(ActionEvent event) {
