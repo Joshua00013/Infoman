@@ -12,14 +12,39 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.FormController">
-   <center>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0" prefWidth="900.0">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="793.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.FormController">
+   <top>
+      <StackPane prefHeight="23.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1095.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER" />
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: black;" StackPane.alignment="TOP_RIGHT">
+               <children>
+                  <ImageView fx:id="mnmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mnmclick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/icons8-minimize-window-96.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="mxmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mxmclick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/icons8-maximize-window-96.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="closebtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#closeclick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/icons8-close-window-96.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </StackPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="760.0" prefWidth="1094.0" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="name" layoutX="46.0" layoutY="61.0" promptText="Enter a name" />
             <Text layoutX="46.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-            <Button layoutX="711.0" layoutY="312.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
+            <Button layoutX="1006.0" layoutY="697.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
             <TextField fx:id="birthplace" layoutX="738.0" layoutY="61.0" prefHeight="25.0" prefWidth="149.0" promptText="Enter birthplace" />
             <ChoiceBox fx:id="scholarshipChoiceBox" layoutX="217.0" layoutY="61.0" prefWidth="150.0" />
             <Text layoutX="217.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scholarship Type" />
@@ -76,34 +101,8 @@
             <Text layoutX="570.0" layoutY="625.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annual Income" />
             <TextField fx:id="gRelation" layoutX="753.0" layoutY="639.0" />
             <Text layoutX="753.0" layoutY="626.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Relationship" />
-            <Button layoutX="661.0" layoutY="312.0" mnemonicParsing="false" onAction="#switchToHomepage1" text="Back" />
+            <Button layoutX="956.0" layoutY="697.0" mnemonicParsing="false" onAction="#switchToHomepage1" text="Back" />
          </children>
       </AnchorPane>
-   </center>
-   <top>
-      <StackPane prefHeight="23.0" prefWidth="900.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER" />
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: black;" StackPane.alignment="TOP_RIGHT">
-               <children>
-                  <ImageView fx:id="mnmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mnmclick" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/icons8-minimize-window-96.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="mxmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mxmclick" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/icons8-maximize-window-96.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="closebtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#closeclick" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/icons8-close-window-96.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </HBox>
-         </children>
-      </StackPane>
-   </top>
+   </bottom>
 </BorderPane>

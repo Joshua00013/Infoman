@@ -11,12 +11,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="627.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminController">
+<BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1484.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminController">
    <center>
-      <AnchorPane prefHeight="400.0" prefWidth="1421.0">
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="1421.0">
           <children>
-              <Button layoutX="1257.0" layoutY="351.0" mnemonicParsing="false" onAction="#switchToHomepage1" text="Back" />
+              <Button layoutX="1386.0" layoutY="540.0" mnemonicParsing="false" onAction="#switchToHomepage1" text="Back" />
               <TableView fx:id="applicantTable" layoutX="10.0" layoutY="73.0" prefHeight="200.0" prefWidth="1359.0">
                   <columns>
                       <TableColumn fx:id="idCol" prefWidth="75.0" text="ApplicantID" />
@@ -39,14 +38,14 @@
                   </columns>
               </TableView>
               <Text layoutX="22.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Applicant Details" />
-            <Button layoutX="1182.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleDeleteButton" text="Delete" />
+            <Button layoutX="1311.0" layoutY="540.0" mnemonicParsing="false" onAction="#handleDeleteButton" text="Delete" />
           </children>
       </AnchorPane>
    </center>
    <top>
       <StackPane prefHeight="23.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER" />
+            <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="1004.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER" />
             <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: black;" StackPane.alignment="TOP_RIGHT">
                <children>
                   <ImageView fx:id="mnmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mnmclick" pickOnBounds="true" preserveRatio="true">
