@@ -15,6 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.LocalDateStringConverter;
@@ -27,13 +28,18 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class AdminController implements Initializable {
+    private double x = 0;
+    private double y = 0;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
-
+    //Add a generic to tableview representing the applicant table. Declare it as the applicant object so it knows what types of objects it will hold
     @FXML
     private TableView<applicant> applicantTable;
-
+    //Table column generic, <S, T> s= row item type t=cell item type
+    // This is equivalent to TableColumn ID = new TableColumn("ID");
+    // = new TableColumn<>("ID"); is omitted because it's directly injected via fxml. The program already knows its a new instance of TableColumn through fxml
     @FXML
     private TableColumn<applicant, Integer> idCol;
 
@@ -106,11 +112,28 @@ public class AdminController implements Initializable {
     }
 
     @FXML
+    private HBox stackpane;
+
+    @FXML
+    void stackpane_dragged(MouseEvent event) {
+        Stage stage = (Stage) stackpane.getScene().getWindow();
+        stage.setY(event.getScreenY() - y);
+        stage.setX(event.getScreenX() - x);
+    }
+
+    @FXML
+    void stackpane_pressed(MouseEvent event) {
+        x = event.getSceneX();
+        y = event.getSceneY();
+    }
+
+    @FXML
     void mxmclick(MouseEvent event) {
         Stage stage = (Stage) mxmbtn.getScene().getWindow();
-        if (stage.isMaximized()){
+        if (stage.isMaximized()) {
             stage.setMaximized(false);
-        }else {stage.setMaximized(true);
+        } else {
+            stage.setMaximized(true);
         }
     }
 
@@ -118,14 +141,14 @@ public class AdminController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DBUtils.establishConnection();
         populateApplicantsTable();
-
-        // Enable TableView editing
+        populateParentsTable();
+        // Enable TableView editing by calling the function.
         enableTableViewEditing();
     }
 
     public void switchToHomepage1(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -137,7 +160,9 @@ public class AdminController implements Initializable {
 
         applicantTable.setItems(data);
 
-        // Configure cell value factories to bind columns to properties in Applicant
+        // Configure cell value factories to bind columns to variables in applicant.java
+        // The left side corresponds to the initialized widgets (refer to the top part) like TableColumn<Applicant, Integer> idCol = new PropertyValueFactory<>("id");
+        // setCellValueFactory will set the values of each cell within id column to become the values of the id within applicant
         idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         scholarshipIdCol.setCellValueFactory(new PropertyValueFactory<>("scholarshipID"));
@@ -156,8 +181,9 @@ public class AdminController implements Initializable {
         uniAddressCol.setCellValueFactory(new PropertyValueFactory<>("uniAddress"));
         passportStatusCol.setCellValueFactory(new PropertyValueFactory<>("passportStatus"));
     }
+
     @FXML
-    private void handleDeleteButton(ActionEvent event) {
+    private void applicantDeleteButton(ActionEvent event) {
         // Get selected item from TableView
         applicant selectedApplicant = applicantTable.getSelectionModel().getSelectedItem();
 
@@ -176,24 +202,32 @@ public class AdminController implements Initializable {
         }
     }
 
+    @FXML
+    void parentDeleteButton(ActionEvent event) {
+
+    }
+
     private void enableTableViewEditing() {
         applicantTable.setEditable(true);
+        idCol.setEditable(false);
 
-        // Example for making id column editable (though typically, IDs are not editable)
-        idCol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-        idCol.setOnEditCommit(event -> {
-            applicant editedApplicant = event.getRowValue();
-            editedApplicant.setId(event.getNewValue());
-            DBUtils.updateApplicant(editedApplicant);
-            applicantTable.refresh();
-        });
+        //SET CELL FACTORY EXPLANATION
+        // it returns the string 'Callback<TableColumn<S, T>, TableCell<S, T>>' where S is the attribute and T is the date type
+        //
+        // nameCol.setCellFactory(new Callback<TableColumn<Applicant, String>, TableCell<Applicant, String>>() {
+        //    @Override
+        //    public TableCell<Applicant, String> call(TableColumn<Applicant, String> param) {
+        //        return new TextFieldTableCell<>();
+        //    }
+        //});
+        //tldr: change the cells of name column as text field cells to be edited, .forTableColumn means it sets every table within that column
 
-        // Example for making name column editable on double-click
+
         nameCol.setCellFactory(TextFieldTableCell.forTableColumn());
         nameCol.setOnEditCommit(event -> {
-            applicant editedApplicant = event.getRowValue();
-            editedApplicant.setName(event.getNewValue());
-            DBUtils.updateApplicant(editedApplicant);
+            applicant editedApplicant = event.getRowValue();      //get the position of the applicant table to be edited
+            editedApplicant.setName(event.getNewValue());         //call a setter for changing the name of the applicant
+            DBUtils.updateApplicant(editedApplicant);             //call the update applicant function in DBUtils class
             applicantTable.refresh();
         });
 
@@ -321,7 +355,38 @@ public class AdminController implements Initializable {
             applicantTable.refresh();
         });
 
-}
+    }
 
+    @FXML
+    private TableView<applicantParent> parenttable;
 
+    @FXML
+    private TableColumn<applicantParent, Integer> parentidcol;
+    @FXML
+    private TableColumn<applicantParent, Integer> applicantidcol;
+    @FXML
+    private TableColumn<applicantParent, String> parentnamecol;
+    @FXML
+    private TableColumn<applicantParent, String> relationcol;
+    @FXML
+    private TableColumn<applicantParent, String> educcol;
+    @FXML
+    private TableColumn<applicantParent, String> occucol;
+    @FXML
+    private TableColumn<applicantParent, String> incomecol;
+
+    private void populateParentsTable() {
+        List<applicantParent> parents = DBUtils.getAllParents();
+        ObservableList<applicantParent> data = FXCollections.observableArrayList(parents);
+
+        parenttable.setItems(data);
+
+        parentidcol.setCellValueFactory(new PropertyValueFactory<>("parentid"));
+        applicantidcol.setCellValueFactory(new PropertyValueFactory<>("childid"));
+        parentnamecol.setCellValueFactory(new PropertyValueFactory<>("parentname"));
+        relationcol.setCellValueFactory(new PropertyValueFactory<>("relationship"));
+        educcol.setCellValueFactory(new PropertyValueFactory<>("education"));
+        occucol.setCellValueFactory(new PropertyValueFactory<>("occupation"));
+        incomecol.setCellValueFactory(new PropertyValueFactory<>("annualincome"));
+    }
 }

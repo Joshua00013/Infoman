@@ -155,24 +155,6 @@ public class DBUtils {
                 String uniAddress = resultSet.getString("UnivAddress");
                 String passportStatus = resultSet.getString("PassportStatus");
 
-                System.out.println("ApplicantID: " + id);
-                System.out.println("Name: " + name);
-                System.out.println("ScholarshipID: " + scholarshipID);
-                System.out.println("Sex: " + sex);
-                System.out.println("Birthday: " + birthDate);
-                System.out.println("BirthPlace: " + birthPlace);
-                System.out.println("Citizenship: " + citizenship);
-                System.out.println("DualCitizStatus: " + dualCitizenshipStatus);
-                System.out.println("ContactNo: " + contactNo);
-                System.out.println("EmailAddress: " + emailAddress);
-                System.out.println("PermAddress: " + permAddress);
-                System.out.println("NoSiblings: " + noSiblings);
-                System.out.println("BirthOrder: " + birthOrder);
-                System.out.println("Course: " + course);
-                System.out.println("UnivName: " + uniName);
-                System.out.println("UnivAddress: " + uniAddress);
-                System.out.println("PassportStatus: " + passportStatus);
-
                 applicant applicant1 = new applicant(id, name, scholarshipID, sex, birthDate, birthPlace,
                         citizenship, dualCitizenshipStatus, contactNo, emailAddress,
                         permAddress, noSiblings, birthOrder, course, uniName,
@@ -186,6 +168,34 @@ public class DBUtils {
         }
 
         return applicants;
+    }
+
+    public static List<applicantParent> getAllParents() {
+        List<applicantParent> parents = new ArrayList<>();
+        String query = "SELECT * FROM parentguardian_info";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query);
+             ResultSet resultSet = preparedStatement.executeQuery()) {
+
+            while (resultSet.next()) {
+                int parentid = resultSet.getInt("ParentGuardianID");
+                int applicantid = resultSet.getInt("ApplicantID");
+                String parentname = resultSet.getString("ParentGuardianName");
+                String education = resultSet.getString("EducAttainment");
+                String occupation = resultSet.getString("Occupation");
+                String income = resultSet.getString("AnnualIncome");
+                String relation = resultSet.getString("Relationship");
+
+                applicantParent parent1 = new applicantParent(parentid, applicantid, parentname, education, occupation, income, relation);
+                parents.add(parent1);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error retrieving applicants: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        return parents;
     }
 
     public static void deleteApplicant(int applicantId) {

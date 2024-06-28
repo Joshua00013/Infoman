@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -9,43 +11,12 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.text.Text?>
 
 <BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1484.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminController">
-   <center>
-      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="1421.0">
-          <children>
-              <Button layoutX="1386.0" layoutY="540.0" mnemonicParsing="false" onAction="#switchToHomepage1" text="Back" />
-              <TableView fx:id="applicantTable" layoutX="10.0" layoutY="73.0" prefHeight="200.0" prefWidth="1359.0">
-                  <columns>
-                      <TableColumn fx:id="idCol" prefWidth="75.0" text="ApplicantID" />
-                      <TableColumn fx:id="scholarshipIdCol" prefWidth="75.0" text="ScholarshipID" />
-                      <TableColumn fx:id="nameCol" prefWidth="120.0" text="Name" />
-                      <TableColumn fx:id="sexCol" minWidth="0.0" prefWidth="30.0" text="Sex" />
-                      <TableColumn fx:id="birthDateCol" prefWidth="75.0" text="Birthday" />
-                  <TableColumn fx:id="birthPlaceCol" prefWidth="75.0" text="BirthPlace" />
-                      <TableColumn fx:id="citizenshipCol" prefWidth="75.0" text="Citizenship" />
-                      <TableColumn fx:id="dualCitizenshipStatusCol" prefWidth="75.0" text="DualCitizStatus" />
-                      <TableColumn fx:id="contactNoCol" prefWidth="75.0" text="ContactNo" />
-                      <TableColumn fx:id="emailAddressCol" prefWidth="75.0" text="EmailAddress" />
-                      <TableColumn fx:id="permAddressCol" prefWidth="75.0" text="PermAddress" />
-                      <TableColumn fx:id="noSiblingsCol" prefWidth="75.0" text="NoSiblings" />
-                      <TableColumn fx:id="birthOrderCol" prefWidth="75.0" text="BirthOrder" />
-                      <TableColumn fx:id="courseCol" prefWidth="75.0" text="Course" />
-                      <TableColumn fx:id="uniNameCol" prefWidth="75.0" text="UnivName" />
-                      <TableColumn fx:id="uniAddressCol" prefWidth="139.0" text="UnivAddress" />
-                      <TableColumn fx:id="passportStatusCol" prefWidth="56.0" text="PassportStatus" />
-                  </columns>
-              </TableView>
-              <Text layoutX="22.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Applicant Details" />
-            <Button layoutX="1311.0" layoutY="540.0" mnemonicParsing="false" onAction="#handleDeleteButton" text="Delete" />
-          </children>
-      </AnchorPane>
-   </center>
    <top>
       <StackPane prefHeight="23.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="1004.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER" />
+            <HBox fx:id="stackpane" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onMouseDragged="#stackpane_dragged" onMousePressed="#stackpane_pressed" prefHeight="35.0" prefWidth="1004.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER" />
             <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: black;" StackPane.alignment="TOP_RIGHT">
                <children>
                   <ImageView fx:id="mnmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mnmclick" pickOnBounds="true" preserveRatio="true">
@@ -68,4 +39,67 @@
          </children>
       </StackPane>
    </top>
+   <left>
+      <TabPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="493.0" prefWidth="1484.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Applicant Details">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                          <TableView fx:id="applicantTable" layoutX="37.0" layoutY="34.0" prefHeight="200.0" prefWidth="1359.0">
+                              <columns>
+                                  <TableColumn fx:id="idCol" prefWidth="75.0" text="ApplicantID" />
+                                  <TableColumn fx:id="scholarshipIdCol" prefWidth="75.0" text="ScholarshipID" />
+                                  <TableColumn fx:id="nameCol" prefWidth="120.0" text="Name" />
+                                  <TableColumn fx:id="sexCol" minWidth="0.0" prefWidth="30.0" text="Sex" />
+                                  <TableColumn fx:id="birthDateCol" prefWidth="75.0" text="Birthday" />
+                              <TableColumn fx:id="birthPlaceCol" prefWidth="75.0" text="BirthPlace" />
+                                  <TableColumn fx:id="citizenshipCol" prefWidth="75.0" text="Citizenship" />
+                                  <TableColumn fx:id="dualCitizenshipStatusCol" prefWidth="75.0" text="DualCitizStatus" />
+                                  <TableColumn fx:id="contactNoCol" prefWidth="75.0" text="ContactNo" />
+                                  <TableColumn fx:id="emailAddressCol" prefWidth="75.0" text="EmailAddress" />
+                                  <TableColumn fx:id="permAddressCol" prefWidth="75.0" text="PermAddress" />
+                                  <TableColumn fx:id="noSiblingsCol" prefWidth="75.0" text="NoSiblings" />
+                                  <TableColumn fx:id="birthOrderCol" prefWidth="75.0" text="BirthOrder" />
+                                  <TableColumn fx:id="courseCol" prefWidth="75.0" text="Course" />
+                                  <TableColumn fx:id="uniNameCol" prefWidth="75.0" text="UnivName" />
+                                  <TableColumn fx:id="uniAddressCol" prefWidth="139.0" text="UnivAddress" />
+                                  <TableColumn fx:id="passportStatusCol" prefWidth="56.0" text="PassportStatus" />
+                              </columns>
+                          </TableView>
+                        <Button layoutX="1396.0" layoutY="405.0" mnemonicParsing="false" onAction="#applicantDeleteButton" text="Delete" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="parenttable" layoutX="297.0" layoutY="53.0" prefHeight="200.0" prefWidth="891.0">
+                          <columns>
+                            <TableColumn fx:id="parentidcol" prefWidth="113.0" text="ParentGuardianID" />
+                            <TableColumn fx:id="applicantidcol" prefWidth="77.0" text="ApplicantID" />
+                              <TableColumn fx:id="parentnamecol" prefWidth="215.0" text="ParentGuardianName" />
+                              <TableColumn fx:id="relationcol" prefWidth="130.0" text="Relationship" />
+                              <TableColumn fx:id="educcol" prefWidth="113.0" text="EducAttainment" />
+                              <TableColumn fx:id="occucol" prefWidth="135.0" text="Occupation" />
+                              <TableColumn fx:id="incomecol" prefWidth="107.0" text="AnnualIncome" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="1399.0" layoutY="410.0" mnemonicParsing="false" onAction="#parentDeleteButton" text="Delete" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </left>
+   <bottom>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="114.0" prefWidth="1484.0" BorderPane.alignment="CENTER">
+          <children>
+              <Button layoutX="1404.0" layoutY="75.0" mnemonicParsing="false" onAction="#switchToHomepage1" text="Back" />
+          </children>
+      </AnchorPane>
+   </bottom>
 </BorderPane>
