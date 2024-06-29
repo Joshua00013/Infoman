@@ -6,15 +6,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
 import java.io.IOException;
 
-public class HomepageController {
-    @FXML
-    private BorderPane Borderpane;
+public class SubmittedController {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -28,22 +28,6 @@ public class HomepageController {
     @FXML
     private ImageView mxmbtn;
 
-    private double y = 0;
-    private double x = 0;
-
-    @FXML
-    void bp_dragged(MouseEvent event) {
-        Stage stage = (Stage) Borderpane.getScene().getWindow();
-        stage.setY(event.getScreenY()-y);
-        stage.setX(event.getScreenX()-x);
-    }
-
-    @FXML
-    void bp_pressed(MouseEvent event) {
-        x = event.getSceneX();
-        y = event.getSceneY();
-
-    }
     @FXML
     private BorderPane Borderpane;
 
@@ -82,16 +66,10 @@ public class HomepageController {
         }else {stage.setMaximized(true);
         }
     }
-    public void switchToForm1(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("formgui.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-    public void switchToAdminLogin(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("adminLogin.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+    public void switchToHomepage1(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
