@@ -42,7 +42,7 @@
     <bottom>
         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="114.0" prefWidth="1484.0" BorderPane.alignment="CENTER">
             <children>
-                <Button layoutX="1404.0" layoutY="75.0" mnemonicParsing="false" onAction="#switchToHomepage1" text="Back" />
+                <Button layoutX="1406.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchToHomepage1" text="Back" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="1406.0" />
             </children>
         </AnchorPane>
     </bottom>
@@ -74,7 +74,7 @@
                                         <TableColumn fx:id="passportStatusCol" prefWidth="56.0" text="PassportStatus" />
                                     </columns>
                                 </TableView>
-                                <Button layoutX="1369.0" layoutY="384.0" mnemonicParsing="false" onAction="#applicantDeleteButton" prefHeight="40.0" prefWidth="101.0" text="Delete" AnchorPane.leftAnchor="1369.0" AnchorPane.rightAnchor="14.0" />
+                                <Button layoutX="1369.0" layoutY="387.0" mnemonicParsing="false" onAction="#applicantDeleteButton" prefHeight="40.0" prefWidth="101.0" text="Delete" AnchorPane.bottomAnchor="35.0" AnchorPane.rightAnchor="14.0" />
                             </children>
                         </AnchorPane>
                     </content>
