@@ -222,21 +222,38 @@ public class DBUtils {
     }
 
     public static void deleteApplicant(int applicantId) {
-        String sql = "DELETE FROM applicant WHERE ApplicantID = ?";
+        String deleteApplicantSQL = "DELETE FROM applicant WHERE ApplicantID = ?";
+        String deleteParentsSQL = "DELETE FROM parentguardian_info WHERE ApplicantID = ?";
 
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setInt(1, applicantId);
-            int rowsDeleted = statement.executeUpdate();
+        try {
+            // Delete parents first
+            try (PreparedStatement parentStatement = connection.prepareStatement(deleteParentsSQL)) {
+                parentStatement.setInt(1, applicantId);
+                int parentRowsDeleted = parentStatement.executeUpdate();
 
-            if (rowsDeleted > 0) {
-                System.out.println("Applicant with ID " + applicantId + " deleted successfully.");
-            } else {
-                System.out.println("No applicant found with ID " + applicantId + ". Deletion failed.");
+                if (parentRowsDeleted > 0) {
+                    System.out.println("Parents of applicant with ID " + applicantId + " deleted successfully.");
+                } else {
+                    System.out.println("No parents found for applicant with ID " + applicantId + ". No parents deleted.");
+                }
+            }
+
+            // Then delete the applicant
+            try (PreparedStatement applicantStatement = connection.prepareStatement(deleteApplicantSQL)) {
+                applicantStatement.setInt(1, applicantId);
+                int applicantRowsDeleted = applicantStatement.executeUpdate();
+
+                if (applicantRowsDeleted > 0) {
+                    System.out.println("Applicant with ID " + applicantId + " deleted successfully.");
+                } else {
+                    System.out.println("No applicant found with ID " + applicantId + ". Deletion failed.");
+                }
             }
         } catch (SQLException e) {
             System.err.println("Error deleting applicant with ID " + applicantId + ": " + e.getMessage());
         }
     }
+
     public static void deleteParent(int parentId) {
         String sql = "DELETE FROM parentguardian_info WHERE ParentGuardianID = ?";
 
@@ -312,5 +329,64 @@ public class DBUtils {
             System.err.println("Error updating parent with ID " + updatedParent.getParentid() + ": " + e.getMessage());
         }
     }
+    public static void InsertGuardianDetails(String parentID, String applicantID, String parentName, String education, String occupation, String income, String relationship) {
+        String query = "INSERT INTO parentguardian_info (ParentGuardianID, ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, AnnualIncome) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, parentID);
+            preparedStatement.setString(2, applicantID);
+            preparedStatement.setString(3, relationship);
+            preparedStatement.setString(4, parentName);
+            preparedStatement.setString(5, education);
+            preparedStatement.setString(6, occupation);
+            preparedStatement.setString(7, income);
+
+            preparedStatement.executeUpdate();
+            System.out.println("Parent details added successfully!");
+        } catch (SQLException e) {
+            System.out.println("Error occurred while adding parent details");
+            e.printStackTrace();
+        }
+    }
+    public static void InsertMotherDetails(String parentID, String applicantID, String parentName, String education, String occupation, String income, String relationship) {
+        String query = "INSERT INTO parentguardian_info (ParentGuardianID, ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, AnnualIncome) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, parentID);
+            preparedStatement.setString(2, applicantID);
+            preparedStatement.setString(3, relationship);
+            preparedStatement.setString(4, parentName);
+            preparedStatement.setString(5, education);
+            preparedStatement.setString(6, occupation);
+            preparedStatement.setString(7, income);
+
+            preparedStatement.executeUpdate();
+            System.out.println("Parent details added successfully!");
+        } catch (SQLException e) {
+            System.out.println("Error occurred while adding parent details");
+            e.printStackTrace();
+        }
+    }
+    public static void InsertFatherDetails(String parentID, String applicantID, String parentName, String education, String occupation, String income, String relationship) {
+        String query = "INSERT INTO parentguardian_info (ParentGuardianID, ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, AnnualIncome) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, parentID);
+            preparedStatement.setString(2, applicantID);
+            preparedStatement.setString(3, relationship);
+            preparedStatement.setString(4, parentName);
+            preparedStatement.setString(5, education);
+            preparedStatement.setString(6, occupation);
+            preparedStatement.setString(7, income);
+
+            preparedStatement.executeUpdate();
+            System.out.println("Parent details added successfully!");
+        } catch (SQLException e) {
+            System.out.println("Error occurred while adding parent details");
+            e.printStackTrace();
+        }
+    }
+
 
 }

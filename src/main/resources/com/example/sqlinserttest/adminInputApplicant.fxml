@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminInputApplicantController">
+    <top>
+        <StackPane prefHeight="23.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1095.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER" />
+                <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: black;" StackPane.alignment="TOP_RIGHT">
+                    <children>
+                        <ImageView fx:id="mnmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mnmclick" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/icons8-minimize-window-96.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="mxmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mxmclick" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/icons8-maximize-window-96.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="closebtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#closeclick" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/icons8-close-window-96.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </children>
+        </StackPane>
+    </top>
+    <bottom>
+        <AnchorPane prefHeight="760.0" prefWidth="1094.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="name" layoutX="46.0" layoutY="61.0" promptText="Enter a name" />
+                <Text layoutX="46.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                <Button layoutX="1006.0" layoutY="314.0" mnemonicParsing="false" onAction="#submitApplicant" text="Submit" />
+                <TextField fx:id="birthplace" layoutX="738.0" layoutY="61.0" prefHeight="25.0" prefWidth="149.0" promptText="Enter birthplace" />
+                <ChoiceBox fx:id="scholarshipChoiceBox" layoutX="217.0" layoutY="61.0" prefWidth="150.0" />
+                <Text layoutX="217.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scholarship Type" />
+                <Text layoutX="383.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex" />
+                <ChoiceBox fx:id="sexChoiceBox" layoutX="383.0" layoutY="61.0" prefWidth="150.0" />
+                <Text layoutX="547.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday" />
+                <DatePicker fx:id="birthdayPicker" layoutX="542.0" layoutY="61.0" promptText="Enter a date" />
+                <Text layoutX="738.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthplace" />
+                <TextField fx:id="citizenship" layoutX="911.0" layoutY="61.0" />
+                <Text layoutX="911.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Citizenship" />
+                <ChoiceBox fx:id="dualCitizStatusChoiceBox" layoutX="46.0" layoutY="141.0" prefWidth="150.0" />
+                <Text layoutX="46.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Has dual citizenship?" />
+                <TextField fx:id="contactno" layoutX="218.0" layoutY="141.0" />
+                <Text layoutX="218.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Number" />
+                <TextField fx:id="email" layoutX="392.0" layoutY="141.0" />
+                <Text layoutX="390.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address" />
+                <Text layoutX="558.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Permanent Address" />
+                <Text layoutX="738.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Siblings" />
+                <Text layoutX="911.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birth Order" />
+                <Text layoutX="51.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course" />
+                <Text layoutX="217.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="University Name" />
+                <Text layoutX="384.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="University Address" />
+                <Text layoutX="549.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Has a passport?" />
+                <ChoiceBox fx:id="passport" layoutX="549.0" layoutY="238.0" prefWidth="150.0" />
+                <TextField fx:id="course" layoutX="46.0" layoutY="238.0" />
+                <TextField fx:id="uniname" layoutX="218.0" layoutY="238.0" />
+                <TextField fx:id="uniAddress" layoutX="384.0" layoutY="238.0" />
+                <TextField fx:id="permAddress" layoutX="555.0" layoutY="141.0" />
+                <TextField fx:id="siblings" layoutX="738.0" layoutY="141.0" />
+                <TextField fx:id="birthOrder" layoutX="911.0" layoutY="141.0" />
+                <Button layoutX="940.0" layoutY="314.0" mnemonicParsing="false" onAction="#switchToAdmin" text="Back" />
+            </children>
+        </AnchorPane>
+    </bottom>
+</BorderPane>

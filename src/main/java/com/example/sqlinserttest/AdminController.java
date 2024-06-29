@@ -157,6 +157,21 @@ public class AdminController implements Initializable {
         stage.show();
     }
 
+    public void switchToInputApplicant(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("adminInputApplicant.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToInputParent(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("adminInputParents.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     private void populateApplicantsTable() {
         List<applicant> applicants = DBUtils.getAllApplicants();
         ObservableList<applicant> data = FXCollections.observableArrayList(applicants);
@@ -199,6 +214,7 @@ public class AdminController implements Initializable {
 
             // Optionally, you may want to refresh the TableView to reflect the changes
             applicantTable.refresh();
+            parenttable.refresh();
         } else {
             // No selection warning or error handling
             System.out.println("No applicant selected for deletion.");
