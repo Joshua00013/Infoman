@@ -197,6 +197,29 @@ public class DBUtils {
 
         return parents;
     }
+    public static List<scholarships> getAllScholarships() {
+        List<scholarships> Scholarships = new ArrayList<>();
+        String query = "SELECT * FROM scholarshiptype";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query);
+             ResultSet resultSet = preparedStatement.executeQuery()) {
+
+            while (resultSet.next()) {
+                String scholarshipid = resultSet.getString("ScholarshipID");
+                String scholarshipname = resultSet.getString("Scholarshipname");
+
+
+                scholarships scholarship1 = new scholarships(scholarshipid, scholarshipname);
+                Scholarships.add(scholarship1);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error retrieving applicants: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        return Scholarships;
+    }
 
     public static void deleteApplicant(int applicantId) {
         String sql = "DELETE FROM applicant WHERE ApplicantID = ?";
@@ -267,4 +290,27 @@ public class DBUtils {
             System.err.println("Error updating applicant with ID " + updatedApplicant.getId() + ": " + e.getMessage());
         }
     }
+    public static void updateParent(applicantParent updatedParent) {
+        String sql = "UPDATE parentguardian_info SET ParentGuardianName = ?, EducAttainment = ?, " +
+                "Occupation = ?, AnnualIncome = ? WHERE ParentGuardianID = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, updatedParent.getParentname());
+            statement.setString(2, updatedParent.getEducation());
+            statement.setString(3, updatedParent.getOccupation());
+            statement.setString(4, updatedParent.getAnnualincome());
+            statement.setInt(5, updatedParent.getParentid());
+
+            int rowsUpdated = statement.executeUpdate();
+
+            if (rowsUpdated > 0) {
+                System.out.println("Parent with ID " + updatedParent.getParentid() + " updated successfully.");
+            } else {
+                System.out.println("No parent found with ID " + updatedParent.getParentid() + ". Update failed.");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error updating parent with ID " + updatedParent.getParentid() + ": " + e.getMessage());
+        }
+    }
+
 }

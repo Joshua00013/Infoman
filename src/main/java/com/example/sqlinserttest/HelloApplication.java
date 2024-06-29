@@ -19,6 +19,7 @@ public class HelloApplication extends Application {
         mainstage.setScene(new Scene(root));
         mainstage.initStyle(StageStyle.UNDECORATED);
         mainstage.show();
+
     }
 
 

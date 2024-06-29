@@ -14,9 +14,9 @@
 
 <BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1484.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminController">
     <top>
-        <HBox fx:id="stackpane" onMouseClicked="#stackpane_pressed" onMouseDragged="#stackpane_dragged" prefHeight="35.0" prefWidth="1484.0" style="-fx-background-color: black;">
+        <HBox prefHeight="35.0" prefWidth="1484.0" style="-fx-background-color: black;">
             <children>
-                <StackPane HBox.hgrow="ALWAYS" />
+                <StackPane fx:id="stackpane" onMouseClicked="#stackpane_pressed" onMouseDragged="#stackpane_dragged" HBox.hgrow="ALWAYS" />
                 <HBox>
                     <children>
                         <ImageView fx:id="mnmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mnmclick" pickOnBounds="true" preserveRatio="true">
@@ -79,7 +79,7 @@
                         </AnchorPane>
                     </content>
                 </Tab>
-                <Tab text="Untitled Tab 2">
+                <Tab text="Parent Details">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
@@ -99,6 +99,20 @@
                         </AnchorPane>
                     </content>
                 </Tab>
+            <Tab text="Scholarship Types">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="scholarshipTable" layoutX="612.0" layoutY="31.0" prefHeight="400.0" prefWidth="277.0" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="612.0" AnchorPane.rightAnchor="595.0" AnchorPane.topAnchor="31.0">
+                           <columns>
+                              <TableColumn fx:id="schIDCol" prefWidth="115.0" text="Scholarship ID" />
+                              <TableColumn fx:id="schNameCol" prefWidth="161.0" text="Scholarship Name" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
             </tabs>
         </TabPane>
     </center>

@@ -15,7 +15,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.LocalDateStringConverter;
@@ -110,9 +112,8 @@ public class AdminController implements Initializable {
         Stage stage = (Stage) mnmbtn.getScene().getWindow();
         stage.setIconified(true);
     }
-
     @FXML
-    private HBox stackpane;
+    private StackPane stackpane;
 
     @FXML
     void stackpane_dragged(MouseEvent event) {
@@ -142,8 +143,10 @@ public class AdminController implements Initializable {
         DBUtils.establishConnection();
         populateApplicantsTable();
         populateParentsTable();
+        populateScholarshipsTable();
         // Enable TableView editing by calling the function.
-        enableTableViewEditing();
+        enableApplicantTableEditing();
+        enableParentTableEditing();
     }
 
     public void switchToHomepage1(ActionEvent event) throws IOException {
@@ -220,7 +223,7 @@ public class AdminController implements Initializable {
         }
     }
 
-    private void enableTableViewEditing() {
+    private void enableApplicantTableEditing() {
         applicantTable.setEditable(true);
         idCol.setEditable(false);
 
@@ -402,4 +405,65 @@ public class AdminController implements Initializable {
         occucol.setCellValueFactory(new PropertyValueFactory<>("occupation"));
         incomecol.setCellValueFactory(new PropertyValueFactory<>("annualincome"));
     }
+    private void enableParentTableEditing() {
+        parenttable.setEditable(true);
+
+        parentnamecol.setCellFactory(TextFieldTableCell.forTableColumn());
+        parentnamecol.setOnEditCommit(event -> {
+            applicantParent editedParent = event.getRowValue();
+            editedParent.setParentname(event.getNewValue());
+            DBUtils.updateParent(editedParent); // Implement this method in DBUtils
+            parenttable.refresh();
+        });
+
+        relationcol.setCellFactory(TextFieldTableCell.forTableColumn());
+        relationcol.setOnEditCommit(event -> {
+            applicantParent editedParent = event.getRowValue();
+            editedParent.setRelationship(event.getNewValue());
+            DBUtils.updateParent(editedParent); // Implement this method in DBUtils
+            parenttable.refresh();
+        });
+
+        educcol.setCellFactory(TextFieldTableCell.forTableColumn());
+        educcol.setOnEditCommit(event -> {
+            applicantParent editedParent = event.getRowValue();
+            editedParent.setEducation(event.getNewValue());
+            DBUtils.updateParent(editedParent); // Implement this method in DBUtils
+            parenttable.refresh();
+        });
+
+        occucol.setCellFactory(TextFieldTableCell.forTableColumn());
+        occucol.setOnEditCommit(event -> {
+            applicantParent editedParent = event.getRowValue();
+            editedParent.setOccupation(event.getNewValue());
+            DBUtils.updateParent(editedParent); // Implement this method in DBUtils
+            parenttable.refresh();
+        });
+
+        incomecol.setCellFactory(TextFieldTableCell.forTableColumn());
+        incomecol.setOnEditCommit(event -> {
+            applicantParent editedParent = event.getRowValue();
+            editedParent.setAnnualincome(event.getNewValue());
+            DBUtils.updateParent(editedParent); // Implement this method in DBUtils
+            parenttable.refresh();
+        });
+    }
+
+    @FXML
+    private TableView<scholarships> scholarshipTable;
+    @FXML
+    private TableColumn<scholarships,String> schIDCol;
+    @FXML
+    private TableColumn<scholarships,String> schNameCol;
+
+    private void populateScholarshipsTable(){
+        List<scholarships> Scholarships = DBUtils.getAllScholarships();
+        ObservableList<scholarships> data = FXCollections.observableArrayList(Scholarships);
+
+        scholarshipTable.setItems(data);
+
+        schIDCol.setCellValueFactory(new PropertyValueFactory<>("scholarshipID"));
+        schNameCol.setCellValueFactory(new PropertyValueFactory<>("scholarshipName"));
+    }
+
 }
