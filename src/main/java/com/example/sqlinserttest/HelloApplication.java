@@ -21,5 +21,4 @@ public class HelloApplication extends Application {
         mainstage.show();
     }
 
-
 }

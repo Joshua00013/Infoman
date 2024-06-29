@@ -15,7 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.LocalDateStringConverter;
@@ -100,6 +100,8 @@ public class AdminController implements Initializable {
     @FXML
     private ImageView mxmbtn;
 
+
+
     @FXML
     void closeclick(MouseEvent event) {
         javafx.application.Platform.exit();
@@ -112,17 +114,17 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    private HBox stackpane;
+    private BorderPane Borderpane;
 
     @FXML
-    void stackpane_dragged(MouseEvent event) {
-        Stage stage = (Stage) stackpane.getScene().getWindow();
+    void bp_dragged(MouseEvent event) {
+        Stage stage = (Stage) Borderpane.getScene().getWindow();
         stage.setY(event.getScreenY() - y);
         stage.setX(event.getScreenX() - x);
     }
 
     @FXML
-    void stackpane_pressed(MouseEvent event) {
+    void bp_pressed(MouseEvent event) {
         x = event.getSceneX();
         y = event.getSceneY();
     }

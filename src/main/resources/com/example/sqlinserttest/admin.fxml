@@ -12,11 +12,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 
-<BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1484.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminController">
+<BorderPane fx:id="Borderpane" maxWidth="-Infinity" minWidth="-Infinity" onMouseDragged="#bp_dragged" onMousePressed="#bp_pressed" prefHeight="640.0" prefWidth="1484.0" style="-fx-border-radius: 30px;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminController">
    <top>
       <StackPane prefHeight="23.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox fx:id="stackpane" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onMouseDragged="#stackpane_dragged" onMousePressed="#stackpane_pressed" prefHeight="35.0" prefWidth="1004.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER" />
+            <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="1004.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER" />
             <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: black;" StackPane.alignment="TOP_RIGHT">
                <children>
                   <ImageView fx:id="mnmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mnmclick" pickOnBounds="true" preserveRatio="true">
