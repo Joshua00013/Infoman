@@ -214,6 +214,22 @@ public class DBUtils {
             System.err.println("Error deleting applicant with ID " + applicantId + ": " + e.getMessage());
         }
     }
+    public static void deleteParent(int parentId) {
+        String sql = "DELETE FROM parentguardian_info WHERE ParentGuardianID = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, parentId);
+            int rowsDeleted = statement.executeUpdate();
+
+            if (rowsDeleted > 0) {
+                System.out.println("Applicant parent with ID " + parentId + " deleted successfully.");
+            } else {
+                System.out.println("No applicant parent found with ID " + parentId + ". Deletion failed.");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error deleting applicant parent with ID " + parentId + ": " + e.getMessage());
+        }
+    }
     public static void updateApplicant(applicant updatedApplicant) {
         String sql = "UPDATE applicant SET Name = ?, ScholarshipID = ?, Sex = ?, " +
                 "Birthday = ?, Birthplace = ?, Citizenship = ?, DualCitizStatus = ?, " +

@@ -94,7 +94,7 @@
                                         <TableColumn fx:id="incomecol" prefWidth="107.0" text="AnnualIncome" />
                                     </columns>
                                 </TableView>
-                                <Button layoutX="1399.0" layoutY="410.0" mnemonicParsing="false" onAction="#parentDeleteButton" text="Delete" />
+                                <Button layoutX="1369.0" layoutY="398.0" mnemonicParsing="false" onAction="#parentDeleteButton" prefHeight="40.0" prefWidth="101.0" text="Delete" AnchorPane.bottomAnchor="35.0" AnchorPane.rightAnchor="14.0" />
                             </children>
                         </AnchorPane>
                     </content>

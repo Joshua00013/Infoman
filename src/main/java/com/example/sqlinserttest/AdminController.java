@@ -204,7 +204,20 @@ public class AdminController implements Initializable {
 
     @FXML
     void parentDeleteButton(ActionEvent event) {
+        applicantParent selectedParent = parenttable.getSelectionModel().getSelectedItem();
+        if (selectedParent != null) {
+            // Remove from TableView
+            parenttable.getItems().remove(selectedParent);
 
+            // Remove from data source (assuming you have a method in DBUtils to delete from database)
+            DBUtils.deleteParent(selectedParent.getParentid()); // Example method; implement this in DBUtils
+
+            // Optionally, you may want to refresh the TableView to reflect the changes
+            parenttable.refresh();
+        } else {
+            // No selection warning or error handling
+            System.out.println("No applicant parent selected for deletion.");
+        }
     }
 
     private void enableTableViewEditing() {
