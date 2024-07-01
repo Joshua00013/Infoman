@@ -20,8 +20,8 @@
                <Image url="@img/adminLogin.png" />
             </image>
          </ImageView>
-         <TextField fx:id="userTextfield" layoutX="527.0" layoutY="268.0" prefHeight="38.0" prefWidth="356.0" promptText="Username" style="-fx-background-color: white; -fx-border-color: 00; -fx-border-width: 0px 0px 2px 0px; -fx-background-radius: 10;" />
-         <PasswordField fx:id="passwordTextfield" layoutX="527.0" layoutY="319.0" prefHeight="38.0" prefWidth="356.0" promptText="Password" style="-fx-background-color: white; -fx-border-color: 00; -fx-background-radius: 10px; -fx-border-width: 0px 0px 2px 0px;" />
+         <TextField fx:id="userTextfield" layoutX="527.0" layoutY="268.0" prefHeight="38.0" prefWidth="356.0" promptText="Username" style="-fx-background-color: white; -fx-border-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-background-radius: 10;" />
+         <PasswordField fx:id="passwordTextfield" layoutX="527.0" layoutY="319.0" prefHeight="38.0" prefWidth="356.0" promptText="Password" style="-fx-background-color: white; -fx-border-color: transparent; -fx-background-radius: 10px; -fx-border-width: 0px 0px 2px 0px;" />
          <Button fx:id="loginButton" layoutX="664.0" layoutY="384.0" mnemonicParsing="false" onAction="#switchToAdmin1" prefHeight="35.0" prefWidth="94.0" style="-fx-background-color: #00AEEF; -fx-background-radius: 10px;" text="Login" textFill="WHITE">
             <font>
                <Font name="System Bold" size="20.0" />
