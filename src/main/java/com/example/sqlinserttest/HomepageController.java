@@ -9,9 +9,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import java.io.IOException;
 
 public class HomepageController {
+    @FXML
+    private BorderPane Borderpane;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -25,6 +28,22 @@ public class HomepageController {
     @FXML
     private ImageView mxmbtn;
 
+    private double y = 0;
+    private double x = 0;
+
+    @FXML
+    void bp_dragged(MouseEvent event) {
+        Stage stage = (Stage) Borderpane.getScene().getWindow();
+        stage.setY(event.getScreenY()-y);
+        stage.setX(event.getScreenX()-x);
+    }
+
+    @FXML
+    void bp_pressed(MouseEvent event) {
+        x = event.getSceneX();
+        y = event.getSceneY();
+
+    }
     @FXML
     void closeclick(MouseEvent event) {
         javafx.application.Platform.exit();

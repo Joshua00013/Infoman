@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 
-<BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1484.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminController">
+<BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1484.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminController">
     <top>
         <HBox prefHeight="35.0" prefWidth="1484.0" style="-fx-background-color: black;">
             <children>
@@ -43,7 +43,7 @@
         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="114.0" prefWidth="1484.0" BorderPane.alignment="CENTER">
             <children>
                 <Button layoutX="1409.0" layoutY="56.0" mnemonicParsing="false" onAction="#switchToHomepage1" text="Back" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="1409.0" />
-            <Button layoutX="1347.0" layoutY="56.0" mnemonicParsing="false" text="Insert" />
+            <Button layoutX="1315.0" layoutY="56.0" mnemonicParsing="false" onAction="#refreshButtonPressed" text="Refresh" />
             </children>
         </AnchorPane>
     </bottom>
