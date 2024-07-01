@@ -42,11 +42,11 @@
       </StackPane>
    </top>
    <center>
-      <TabPane prefHeight="727.0" prefWidth="1094.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-        <tabs>
-          <Tab text="Untitled Tab 1">
+      <TabPane fx:id="tabPane" prefHeight="727.0" prefWidth="1094.0" stylesheets="@styles.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <tabs>
+          <Tab fx:id="tab1" closable="false" text="Untitled Tab 1">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="533.0" prefWidth="1094.0">
                      <children>
                         <TextField fx:id="name" layoutX="16.0" layoutY="45.0" promptText="Enter a name" />
                         <Text layoutX="16.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
@@ -80,11 +80,13 @@
                         <TextField fx:id="permAddress" layoutX="525.0" layoutY="125.0" />
                         <TextField fx:id="siblings" layoutX="708.0" layoutY="125.0" />
                         <TextField fx:id="birthOrder" layoutX="881.0" layoutY="125.0" />
+                        <Button layoutX="956.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToHomepage1" text="Back" />
+                        <Button layoutX="1018.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToTab2" text="Next" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Untitled Tab 2">
+          <Tab fx:id="tab2" closable="false" text="Untitled Tab 2">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -114,6 +116,8 @@
                         <Text layoutX="564.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annual Income" />
                         <TextField fx:id="gRelation" layoutX="747.0" layoutY="330.0" />
                         <Text layoutX="747.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Relationship" />
+                        <Button layoutX="937.0" layoutY="665.0" mnemonicParsing="false" onAction="#switchToTab1FromTab2" text="Back" />
+                        <Button layoutX="999.0" layoutY="665.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
                      </children>
                   </AnchorPane>
             </content>
@@ -121,12 +125,4 @@
         </tabs>
       </TabPane>
    </center>
-   <bottom>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button layoutX="996.0" layoutY="152.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
-            <Button layoutX="946.0" layoutY="152.0" mnemonicParsing="false" onAction="#switchToHomepage1" text="Back" />
-         </children>
-      </AnchorPane>
-   </bottom>
 </BorderPane>

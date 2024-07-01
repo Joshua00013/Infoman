@@ -7,9 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -24,6 +22,25 @@ public class FormController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    @FXML
+    private TabPane tabPane;
+
+    @FXML
+    private Tab tab1; // Reference to the first tab
+
+    @FXML
+    private Tab tab2; // Reference to the second tab
+
+
+    @FXML
+    void switchToTab2(ActionEvent event) {
+        tabPane.getSelectionModel().select(tab2);
+    }
+
+    @FXML
+    void switchToTab1FromTab2(ActionEvent event) {
+        tabPane.getSelectionModel().select(tab1);
+    }
 
     public void switchToHomepage1(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
@@ -210,5 +227,6 @@ public class FormController implements Initializable {
         sexChoiceBox.getItems().addAll(sexop);
         dualCitizStatusChoiceBox.getItems().addAll(dualCitizStatusop);
         passport.getItems().addAll(passportop);
+        tabPane.getStyleClass().add("tab-pane-no-header");
     }
 }

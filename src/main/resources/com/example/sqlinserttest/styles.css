@@ -1,0 +1,17 @@
+.tab-pane-no-header .tab-header-area {
+    visibility: hidden;
+    -fx-padding: 0;
+    -fx-pref-height: 0;
+}
+
+.tab-pane-no-header .tab-pane {
+    -fx-tab-min-height: 0;
+    -fx-tab-max-height: 0;
+    -fx-tab-min-width: 0;
+    -fx-tab-max-width: 0;
+    -fx-padding: 0;
+}
+
+.tab-pane-no-header .tab-content-area {
+    -fx-padding: 0.5em;
+}
