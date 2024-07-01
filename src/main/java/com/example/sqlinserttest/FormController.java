@@ -34,6 +34,23 @@ public class FormController implements Initializable {
     }
 
     @FXML
+    void switchToForm2(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("formguiPage2.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    void switchToForm1(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("formgui.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
     private TextField name;
 
     @FXML
