@@ -205,14 +205,17 @@ public class AdminController implements Initializable {
         // Get selected item from TableView
         applicant selectedApplicant = applicantTable.getSelectionModel().getSelectedItem();
 
+
         if (selectedApplicant != null) {
             // Remove from TableView
             applicantTable.getItems().remove(selectedApplicant);
+
 
             // Remove from data source (assuming you have a method in DBUtils to delete from database)
             DBUtils.deleteApplicant(selectedApplicant.getId()); // Example method; implement this in DBUtils
 
             // Optionally, you may want to refresh the TableView to reflect the changes
+            refreshButtonPressed();
             applicantTable.refresh();
             parenttable.refresh();
         } else {
@@ -232,6 +235,7 @@ public class AdminController implements Initializable {
             DBUtils.deleteParent(selectedParent.getParentid()); // Example method; implement this in DBUtils
 
             // Optionally, you may want to refresh the TableView to reflect the changes
+            refreshButtonPressed();
             parenttable.refresh();
         } else {
             // No selection warning or error handling
@@ -481,5 +485,26 @@ public class AdminController implements Initializable {
         schIDCol.setCellValueFactory(new PropertyValueFactory<>("scholarshipID"));
         schNameCol.setCellValueFactory(new PropertyValueFactory<>("scholarshipName"));
     }
+    @FXML
+    void refreshButtonPressed(ActionEvent event) {
+        applicantTable.getItems().clear();
+        parenttable.getItems().clear();
+        scholarshipTable.getItems().clear();
+
+        populateApplicantsTable();
+        populateParentsTable();
+        populateScholarshipsTable();
+    }
+
+    void refreshButtonPressed() {
+        applicantTable.getItems().clear();
+        parenttable.getItems().clear();
+        scholarshipTable.getItems().clear();
+
+        populateApplicantsTable();
+        populateParentsTable();
+        populateScholarshipsTable();
+    }
+
 
 }
