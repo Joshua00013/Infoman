@@ -1,11 +1,20 @@
 package com.example.sqlinserttest;
 
+import javafx.scene.control.Alert;
+
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DBUtils {
+    public static void errorDialogue(String title, String message){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error!");
+        alert.setContentText(message);
+        alert.setHeaderText(title);
+        alert.showAndWait();
+    }
     private static Connection connection;
     public static void establishConnection() {
         String url = "jdbc:mysql://localhost:3306/scholarshipdb";
@@ -20,6 +29,7 @@ public class DBUtils {
         } catch (ClassNotFoundException | SQLException e) { //display an error if connection is not successful
             e.printStackTrace();
             System.err.println("Error establishing connection to database");
+            errorDialogue("SQL Error", e.getMessage());
         }
 
     }
@@ -31,6 +41,7 @@ public class DBUtils {
             } catch (SQLException e) {
                 e.printStackTrace();
                 System.err.println("Error closing connection");
+                errorDialogue("SQL Error", e.getMessage());
             }
         }
     }
@@ -74,6 +85,7 @@ public class DBUtils {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            errorDialogue("SQL Error", e.getMessage());
             return -1;
         }
     }
@@ -105,6 +117,7 @@ public class DBUtils {
         } catch (SQLException e) {
             System.out.println("adding error has occured");
             e.printStackTrace();
+            errorDialogue("SQL Error", e.getMessage());
         }
     }
 
@@ -126,6 +139,7 @@ public class DBUtils {
             System.out.println("Parent details added successfully!");
         } catch (SQLException e) {
             System.out.println("adding error has occured");
+            errorDialogue("SQL Error", e.getMessage());
             e.printStackTrace();
         }
     }
@@ -164,6 +178,7 @@ public class DBUtils {
 
         } catch (SQLException e) {
             System.out.println("Error retrieving applicants: " + e.getMessage());
+            errorDialogue("SQL Error", e.getMessage());
             e.printStackTrace();
         }
 
@@ -192,6 +207,7 @@ public class DBUtils {
 
         } catch (SQLException e) {
             System.out.println("Error retrieving applicants: " + e.getMessage());
+            errorDialogue("SQL Error", e.getMessage());
             e.printStackTrace();
         }
 
@@ -215,6 +231,7 @@ public class DBUtils {
 
         } catch (SQLException e) {
             System.out.println("Error retrieving applicants: " + e.getMessage());
+            errorDialogue("SQL Error", e.getMessage());
             e.printStackTrace();
         }
 
@@ -251,6 +268,7 @@ public class DBUtils {
             }
         } catch (SQLException e) {
             System.err.println("Error deleting applicant with ID " + applicantId + ": " + e.getMessage());
+            errorDialogue("SQL Error", e.getMessage());
         }
     }
 
@@ -268,6 +286,7 @@ public class DBUtils {
             }
         } catch (SQLException e) {
             System.err.println("Error deleting applicant parent with ID " + parentId + ": " + e.getMessage());
+            errorDialogue("SQL Error", e.getMessage());
         }
     }
     public static void updateApplicant(applicant updatedApplicant) {
@@ -305,6 +324,7 @@ public class DBUtils {
             }
         } catch (SQLException e) {
             System.err.println("Error updating applicant with ID " + updatedApplicant.getId() + ": " + e.getMessage());
+            errorDialogue("SQL Error", e.getMessage());
         }
     }
     public static void updateParent(applicantParent updatedParent) {
@@ -327,6 +347,7 @@ public class DBUtils {
             }
         } catch (SQLException e) {
             System.err.println("Error updating parent with ID " + updatedParent.getParentid() + ": " + e.getMessage());
+            errorDialogue("SQL Error", e.getMessage());
         }
     }
     public static void InsertGuardianDetails(String parentID, String applicantID, String parentName, String education, String occupation, String income, String relationship) {
@@ -346,6 +367,7 @@ public class DBUtils {
             System.out.println("Parent details added successfully!");
         } catch (SQLException e) {
             System.out.println("Error occurred while adding parent details");
+            errorDialogue("SQL Error", e.getMessage());
             e.printStackTrace();
         }
     }
@@ -365,6 +387,7 @@ public class DBUtils {
             System.out.println("Parent details added successfully!");
         } catch (SQLException e) {
             System.out.println("Error occurred while adding parent details");
+            errorDialogue("SQL Error", e.getMessage());
             e.printStackTrace();
         }
     }
@@ -384,6 +407,7 @@ public class DBUtils {
             System.out.println("Parent details added successfully!");
         } catch (SQLException e) {
             System.out.println("Error occurred while adding parent details");
+            errorDialogue("SQL Error", e.getMessage());
             e.printStackTrace();
         }
     }

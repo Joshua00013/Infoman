@@ -191,25 +191,29 @@ public class FormController implements Initializable {
 
     @FXML
     void submit(ActionEvent event) {
-        DBUtils.establishConnection();
+        try {
+            DBUtils.establishConnection();
 
-        String selectedScholarship = scholarshipChoiceBox.getValue();
-        String selectedSex = sexChoiceBox.getValue();
-        LocalDate selectedBirthday = birthdayPicker.getValue();
+            String selectedScholarship = scholarshipChoiceBox.getValue();
+            String selectedSex = sexChoiceBox.getValue();
+            LocalDate selectedBirthday = birthdayPicker.getValue();
 
-        int applicantID = DBUtils.addApplicant(name.getText(), selectedScholarship, selectedSex, selectedBirthday.toString(),
-                birthplace.getText(), citizenship.getText(), dualCitizStatusChoiceBox.getValue(),
-                contactno.getText(), email.getText(), permAddress.getText(),
-                Integer.parseInt(siblings.getText()), Integer.parseInt(birthOrder.getText()), course.getText(),
-                uniname.getText(), uniAddress.getText(), passport.getValue());
+            int applicantID = DBUtils.addApplicant(name.getText(), selectedScholarship, selectedSex, selectedBirthday.toString(),
+                    birthplace.getText(), citizenship.getText(), dualCitizStatusChoiceBox.getValue(),
+                    contactno.getText(), email.getText(), permAddress.getText(),
+                    Integer.parseInt(siblings.getText()), Integer.parseInt(birthOrder.getText()), course.getText(),
+                    uniname.getText(), uniAddress.getText(), passport.getValue());
 
-        DBUtils.addParentDetails(applicantID, this,mName.getText(), mEdu.getText(), mOccu.getText(), mIncome.getText());
-        DBUtils.addParentDetails(applicantID, this,fName.getText(),fEdu.getText(), fOccu.getText(), fIncome.getText());
+            DBUtils.addParentDetails(applicantID, this, mName.getText(), mEdu.getText(), mOccu.getText(), mIncome.getText());
+            DBUtils.addParentDetails(applicantID, this, fName.getText(), fEdu.getText(), fOccu.getText(), fIncome.getText());
 
-        if (!gEdu.getText().isEmpty()) {
-            DBUtils.addParentDetails(applicantID, this, gName.getText(), gEdu.getText(), gOccu.getText(), gIncome.getText(), gRelation.getText());
+            if (!gEdu.getText().isEmpty()) {
+                DBUtils.addParentDetails(applicantID, this, gName.getText(), gEdu.getText(), gOccu.getText(), gIncome.getText(), gRelation.getText());
+            }
+            DBUtils.closeConnection();
+        }catch (NullPointerException e){
+            DBUtils.errorDialogue("Null Pointer Exception", "Please fill up all the required fields!");
         }
-        DBUtils.closeConnection();
     }
 
 
