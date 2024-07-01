@@ -216,8 +216,7 @@ public class AdminController implements Initializable {
 
             // Optionally, you may want to refresh the TableView to reflect the changes
             refreshButtonPressed();
-            applicantTable.refresh();
-            parenttable.refresh();
+
         } else {
             // No selection warning or error handling
             System.out.println("No applicant selected for deletion.");
