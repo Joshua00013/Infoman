@@ -12,59 +12,32 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminLoginController">
-   <left>
-      <AnchorPane prefHeight="267.0" prefWidth="455.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
-         <ImageView fitHeight="682.0" fitWidth="419.0" layoutX="18.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
-            <style>-fx-image:url("/img");</style>
-            <Image url="@img/DOSTnotext.png" />
-         </ImageView>
-         <Text fill="WHITE" layoutX="81.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DOST-SEI">
-            <font>
-               <Font name="Arial Black" size="44.0" />
-            </font>
-         </Text>
-         <Text fill="WHITE" layoutX="81.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department of Science and Technology" />
-      </AnchorPane>
-   </left>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.2" prefWidth="942.4" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminLoginController">
    <center>
       <AnchorPane prefHeight="293.0" prefWidth="481.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
-         <Text fill="#00aeff" layoutX="108.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Log">
-            <font>
-               <Font name="Arial Black" size="26.0" />
-            </font>
-         </Text>
-         <TextField fx:id="userTextfield" layoutX="103.0" layoutY="306.0" prefWidth="200.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #00AEEF; -fx-border-width: 0px 0px 2px 0px;" />
-         <PasswordField fx:id="passwordTextfield" layoutX="104.0" layoutY="337.0" prefHeight="30.0" prefWidth="200.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #00AEEF; -fx-border-width: 0px 0px 2px 0px;" />
-         <Button fx:id="loginButton" layoutX="166.0" layoutY="381.0" mnemonicParsing="false" onAction="#switchToAdmin1" style="-fx-background-color: #00AEEF;" text="Login" textFill="WHITE">
+         <ImageView fitHeight="593.0" fitWidth="969.0" layoutX="1.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@img/adminLogin.png" />
+            </image>
+         </ImageView>
+         <TextField fx:id="userTextfield" layoutX="527.0" layoutY="268.0" prefHeight="38.0" prefWidth="356.0" promptText="Username" style="-fx-background-color: white; -fx-border-color: 00; -fx-border-width: 0px 0px 2px 0px; -fx-background-radius: 10;" />
+         <PasswordField fx:id="passwordTextfield" layoutX="527.0" layoutY="319.0" prefHeight="38.0" prefWidth="356.0" promptText="Password" style="-fx-background-color: white; -fx-border-color: 00; -fx-background-radius: 10px; -fx-border-width: 0px 0px 2px 0px;" />
+         <Button fx:id="loginButton" layoutX="664.0" layoutY="384.0" mnemonicParsing="false" onAction="#switchToAdmin1" prefHeight="35.0" prefWidth="94.0" style="-fx-background-color: #00AEEF; -fx-background-radius: 10px;" text="Login" textFill="WHITE">
             <font>
                <Font name="System Bold" size="20.0" />
             </font>
          </Button>
-         <Text layoutX="102.0" layoutY="285.0" opacity="0.32" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter you login details below." />
-         <Text layoutX="140.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DOST - SEI" wrappingWidth="165.251953125">
+         <Text layoutX="140.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="165.251953125">
             <font>
                <Font name="Arial Black" size="25.0" />
             </font>
          </Text>
-         <Text fill="#fada35" layoutX="260.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="in">
-            <font>
-               <Font name="Arial Black" size="26.0" />
-            </font>
-         </Text>
-         <Text layoutX="98.0" layoutY="235.0" opacity="0.32" strokeType="OUTSIDE" strokeWidth="0.0" text="Department of Science and Technology" />
-         <ImageView fitHeight="150.0" fitWidth="33.0" layoutX="98.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@img/DOSTlogo.png" />
-            </image>
-         </ImageView>
       </AnchorPane>
    </center>
    <top>
       <StackPane prefHeight="23.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER" />
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="945.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER" />
             <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: black;" StackPane.alignment="TOP_RIGHT">
                <children>
                   <ImageView fx:id="mnmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mnmclick" pickOnBounds="true" preserveRatio="true">

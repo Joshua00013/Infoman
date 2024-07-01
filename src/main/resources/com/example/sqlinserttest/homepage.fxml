@@ -14,9 +14,9 @@
 
 <BorderPane fx:id="Borderpane" onMouseDragged="#bp_dragged" onMousePressed="#bp_pressed" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.HomepageController">
    <top>
-      <StackPane prefHeight="23.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+      <StackPane prefHeight="23.0" prefWidth="900.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
          <children>
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER">
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="940.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER">
                <children>
                   <ImageView fx:id="mnmbtn1" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mnmclick" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -57,27 +57,32 @@
          </children>
       </StackPane>
    </top>
-   <center>
-      <AnchorPane prefHeight="500.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+   <right>
+      <AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
          <children>
+            <ImageView fitHeight="536.0" fitWidth="948.0" layoutX="-6.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/lexiLandingPage.png" />
+               </image>
+            </ImageView>
             <ImageView fitHeight="516.0" fitWidth="911.0" layoutX="-11.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/lexi-LandingPage.png" />
                </image>
             </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00aeff" height="26.0" layoutX="327.0" layoutY="391.0" stroke="#00aeff" strokeType="INSIDE" style="-fx-arc-height: 20px; -fx-arc-width: 20px;" width="101.0" />
-            <Button layoutX="323.0" layoutY="388.0" mnemonicParsing="false" onAction="#switchToForm1" prefWidth="104.0" style="-fx-background-color: white; -fx-background-radius: 20px;" text="Apply Now">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00aeff" height="26.0" layoutX="349.0" layoutY="391.0" stroke="#00aeff" strokeType="INSIDE" style="-fx-arc-height: 20px; -fx-arc-width: 20px;" width="101.0" />
+            <Button layoutX="345.0" layoutY="388.0" mnemonicParsing="false" onAction="#switchToForm1" prefWidth="104.0" style="-fx-background-color: white; -fx-background-radius: 20px;" text="Apply Now">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>
             </Button>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00aeff" height="26.0" layoutX="474.0" layoutY="391.0" stroke="#00aeff" strokeType="INSIDE" style="-fx-arc-height: 20px; -fx-arc-width: 20px;" width="101.0" />
-            <Button layoutX="470.0" layoutY="388.0" mnemonicParsing="false" onAction="#switchToAdminLogin" style="-fx-background-color: white; -fx-background-radius: 20px;" text="Administrator">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00aeff" height="26.0" layoutX="496.0" layoutY="391.0" stroke="#00aeff" strokeType="INSIDE" style="-fx-arc-height: 20px; -fx-arc-width: 20px;" width="101.0" />
+            <Button layoutX="492.0" layoutY="388.0" mnemonicParsing="false" onAction="#switchToAdminLogin" style="-fx-background-color: white; -fx-background-radius: 20px;" text="Administrator">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>
             </Button>
          </children>
       </AnchorPane>
-   </center>
+   </right>
 </BorderPane>
