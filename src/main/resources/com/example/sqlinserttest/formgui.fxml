@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="793.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.FormController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.FormController">
    <top>
       <StackPane prefHeight="23.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
@@ -80,8 +80,8 @@
                         <TextField fx:id="permAddress" layoutX="525.0" layoutY="125.0" />
                         <TextField fx:id="siblings" layoutX="708.0" layoutY="125.0" />
                         <TextField fx:id="birthOrder" layoutX="881.0" layoutY="125.0" />
-                        <Button layoutX="956.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToHomepage1" text="Back" />
-                        <Button layoutX="1018.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToTab2" text="Next" />
+                        <Button layoutX="927.0" layoutY="315.0" mnemonicParsing="false" onAction="#switchToHomepage1" text="Back" />
+                        <Button layoutX="989.0" layoutY="315.0" mnemonicParsing="false" onAction="#switchToTab2" text="Next" />
                      </children>
                   </AnchorPane>
             </content>
@@ -116,8 +116,8 @@
                         <Text layoutX="564.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annual Income" />
                         <TextField fx:id="gRelation" layoutX="747.0" layoutY="330.0" />
                         <Text layoutX="747.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Relationship" />
-                        <Button layoutX="937.0" layoutY="665.0" mnemonicParsing="false" onAction="#switchToTab1FromTab2" text="Back" />
-                        <Button layoutX="999.0" layoutY="665.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
+                        <Button layoutX="914.0" layoutY="424.0" mnemonicParsing="false" onAction="#switchToTab1FromTab2" text="Back" />
+                        <Button layoutX="976.0" layoutY="424.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
                      </children>
                   </AnchorPane>
             </content>
