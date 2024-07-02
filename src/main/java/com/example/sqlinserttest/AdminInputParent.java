@@ -15,20 +15,18 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 public class AdminInputParent {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-    public void switchToAdmin(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("admin.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+    @FXML
+    void closeWindow(ActionEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close(); // Close the stage
     }
+
 
     @FXML
     void closeclick(MouseEvent event) {
-        javafx.application.Platform.exit();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
     @FXML
     private ImageView mnmbtn;
@@ -61,6 +59,9 @@ public class AdminInputParent {
     private TextField mOccu;
 
     @FXML
+    private TextField mEmployee;
+
+    @FXML
     private TextField mIncome;
 
     @FXML
@@ -73,6 +74,9 @@ public class AdminInputParent {
     private TextField fOccu;
 
     @FXML
+    private TextField fEmployee;
+
+    @FXML
     private TextField fIncome;
 
     @FXML
@@ -83,6 +87,9 @@ public class AdminInputParent {
 
     @FXML
     private TextField gOccu;
+
+    @FXML
+    private TextField gEmployee;
 
     @FXML
     private TextField gIncome;
@@ -103,14 +110,14 @@ public class AdminInputParent {
         DBUtils.establishConnection();
 
         if (!mID.getText().isEmpty()) {
-            DBUtils.InsertMotherDetails(mID.getText(), applicantID.getText(), mName.getText(), mEdu.getText(), mOccu.getText(), mIncome.getText(), "Mother");
+            DBUtils.InsertParentDetails(mID.getText(), applicantID.getText(), mName.getText(), mEdu.getText(), mOccu.getText(),mEmployee.getText(), mIncome.getText(), "Mother");
         }
         if (!fID.getText().isEmpty()) {
-            DBUtils.InsertFatherDetails(fID.getText(), applicantID.getText(), fName.getText(), fEdu.getText(), fOccu.getText(), fIncome.getText(), "Father");
+            DBUtils.InsertParentDetails(fID.getText(), applicantID.getText(), fName.getText(), fEdu.getText(), fOccu.getText(),fEmployee.getText(), fIncome.getText(), "Father");
         }
         if (!gEdu.getText().isEmpty()) {
-            DBUtils.InsertGuardianDetails(gID.getText(), applicantID.getText(), gName.getText(), gEdu.getText(), gOccu.getText(), gIncome.getText(), gRelation.getText());
+            DBUtils.InsertGuardianDetails(gID.getText(), applicantID.getText(), gName.getText(), gEdu.getText(), gOccu.getText(),gEmployee.getText(), gIncome.getText(), gRelation.getText());
         }
-        DBUtils.closeConnection();
+
     }
 }

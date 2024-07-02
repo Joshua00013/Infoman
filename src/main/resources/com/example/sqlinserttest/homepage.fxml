@@ -67,7 +67,7 @@
             </ImageView>
             <ImageView fitHeight="516.0" fitWidth="911.0" layoutX="-11.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/lexi-LandingPage.png" />
+                  <Image url="@img/lexiLandingPage.png" />
                </image>
             </ImageView>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00aeff" height="26.0" layoutX="349.0" layoutY="391.0" stroke="#00aeff" strokeType="INSIDE" style="-fx-arc-height: 20px; -fx-arc-width: 20px;" width="101.0" />

@@ -19,6 +19,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.LocalDateStringConverter;
 
@@ -157,19 +158,31 @@ public class AdminController implements Initializable {
         stage.show();
     }
 
-    public void switchToInputApplicant(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("adminInputApplicant.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+    public void parentWindow(ActionEvent event) throws IOException{
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("adminInputParents.fxml"));
+            Parent root2 = (Parent)fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root2));
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+        }catch (Exception e){
+            DBUtils.errorDialogue("Error!","Cannot load new window!");
+        }
     }
-    public void switchToInputParent(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("adminInputParents.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+    public void applicantWindow(ActionEvent event) throws IOException{
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("adminInputApplicant.fxml"));
+            Parent root1 = (Parent)fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+        }catch (Exception e){
+            DBUtils.errorDialogue("Error!",e.getMessage());
+        }
     }
 
     private void populateApplicantsTable() {
@@ -408,6 +421,8 @@ public class AdminController implements Initializable {
     @FXML
     private TableColumn<applicantParent, String> occucol;
     @FXML
+    private TableColumn<applicantParent, String> employeecol;
+    @FXML
     private TableColumn<applicantParent, String> incomecol;
 
     private void populateParentsTable() { // INSERT TABLE
@@ -422,6 +437,7 @@ public class AdminController implements Initializable {
         relationcol.setCellValueFactory(new PropertyValueFactory<>("relationship"));
         educcol.setCellValueFactory(new PropertyValueFactory<>("education"));
         occucol.setCellValueFactory(new PropertyValueFactory<>("occupation"));
+        employeecol.setCellValueFactory(new PropertyValueFactory<>("employee"));
         incomecol.setCellValueFactory(new PropertyValueFactory<>("annualincome"));
     }
     private void enableParentTableEditing() {
@@ -455,6 +471,13 @@ public class AdminController implements Initializable {
         occucol.setOnEditCommit(event -> {
             applicantParent editedParent = event.getRowValue();
             editedParent.setOccupation(event.getNewValue());
+            DBUtils.updateParent(editedParent); // Implement this method in DBUtils
+            parenttable.refresh();
+        });
+        employeecol.setCellFactory(TextFieldTableCell.forTableColumn());
+        employeecol.setOnEditCommit(event -> {
+            applicantParent editedParent = event.getRowValue();
+            editedParent.setEmployee(event.getNewValue());
             DBUtils.updateParent(editedParent); // Implement this method in DBUtils
             parenttable.refresh();
         });
@@ -500,6 +523,7 @@ public class AdminController implements Initializable {
         parenttable.getItems().clear();
         scholarshipTable.getItems().clear();
 
+        DBUtils.establishConnection();
         populateApplicantsTable();
         populateParentsTable();
         populateScholarshipsTable();

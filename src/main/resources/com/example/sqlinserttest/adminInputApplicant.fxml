@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminInputApplicantController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminInputApplicantController">
     <top>
         <StackPane prefHeight="23.0" prefWidth="900.0" BorderPane.alignment="CENTER">
             <children>
@@ -75,7 +75,7 @@
                 <TextField fx:id="permAddress" layoutX="555.0" layoutY="141.0" />
                 <TextField fx:id="siblings" layoutX="738.0" layoutY="141.0" />
                 <TextField fx:id="birthOrder" layoutX="911.0" layoutY="141.0" />
-                <Button layoutX="940.0" layoutY="314.0" mnemonicParsing="false" onAction="#switchToAdmin" text="Back" />
+                <Button layoutX="940.0" layoutY="314.0" mnemonicParsing="false" onAction="#closeWindow" text="Back" />
             </children>
         </AnchorPane>
     </bottom>

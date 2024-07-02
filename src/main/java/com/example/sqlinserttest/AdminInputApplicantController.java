@@ -20,17 +20,13 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class AdminInputApplicantController implements Initializable {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-    public void switchToAdmin(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("admin.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 
+
+    @FXML
+    void closeWindow(ActionEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close(); // Close the stage
+    }
 
     @FXML
     private TextField name;
@@ -63,7 +59,8 @@ public class AdminInputApplicantController implements Initializable {
 
     @FXML
     void closeclick(MouseEvent event) {
-        javafx.application.Platform.exit();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
     @FXML
     private ImageView mnmbtn;
@@ -137,8 +134,7 @@ public class AdminInputApplicantController implements Initializable {
         } catch (NumberFormatException e) {
             System.err.println("Error: Invalid number format for Birth Order.");
             e.printStackTrace();
-        } finally {
-            DBUtils.closeConnection();
         }
+
     }
 }
