@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -10,44 +9,47 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="Borderpane" onMouseDragged="#bp_dragged" onMousePressed="#bp_pressed" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.HomepageController">
-   <top>
-      <StackPane prefHeight="23.0" prefWidth="900.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.HomepageController">
+   <left>
+      <AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
          <children>
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="940.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER">
-               <children>
-                  <ImageView fx:id="mnmbtn1" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mnmclick" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/dostLogo2.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Department of Science and Technology" wrappingWidth="293.13671875">
-                     <font>
-                        <Font name="Arial Bold" size="15.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
-                     </HBox.margin>
-                  </Text>
-               </children></HBox>
+            <ImageView fitHeight="600.0" fitWidth="1000.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/lexiLandingPage.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0e194d" height="30.0" layoutX="362.0" layoutY="426.0" stroke="#0e194d" strokeType="INSIDE" style="-fx-arc-height: 30px; -fx-arc-width: 30px;" width="120.0" />
+            <Button layoutX="359.0" layoutY="420.0" mnemonicParsing="false" onAction="#switchToForm1" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 20px;" text="Apply Now">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Button>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0e194d" height="30.0" layoutX="509.0" layoutY="426.0" stroke="#0e194d" strokeType="INSIDE" style="-fx-arc-height: 30px; -fx-arc-width: 30px;" width="120.0" />
+            <Button layoutX="506.0" layoutY="420.0" mnemonicParsing="false" onAction="#switchToAdminLogin" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 20px;" text="Administrator">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </left>
+   <top>
+      <StackPane fx:id="stackpane" onMouseDragged="#stackpane_dragged" onMousePressed="#stackpane_pressed" prefHeight="35.0" prefWidth="1038.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+         <children>
             <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: black;" StackPane.alignment="TOP_RIGHT">
                <children>
-                  <ImageView fx:id="mnmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mnmclick" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="mnmbtn2" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mnmclick" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/icons8-minimize-window-96.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="mxmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mxmclick" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/icons8-maximize-window-96.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="closebtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#closeclick" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="closebtn1" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#closeclick" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/icons8-close-window-96.png" />
                      </image>
@@ -57,32 +59,4 @@
          </children>
       </StackPane>
    </top>
-   <right>
-      <AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="536.0" fitWidth="948.0" layoutX="-6.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/lexiLandingPage.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="516.0" fitWidth="911.0" layoutX="-11.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/lexi-LandingPage.png" />
-               </image>
-            </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00aeff" height="26.0" layoutX="349.0" layoutY="391.0" stroke="#00aeff" strokeType="INSIDE" style="-fx-arc-height: 20px; -fx-arc-width: 20px;" width="101.0" />
-            <Button layoutX="345.0" layoutY="388.0" mnemonicParsing="false" onAction="#switchToForm1" prefWidth="104.0" style="-fx-background-color: white; -fx-background-radius: 20px;" text="Apply Now">
-               <font>
-                  <Font name="Arial Bold" size="13.0" />
-               </font>
-            </Button>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00aeff" height="26.0" layoutX="496.0" layoutY="391.0" stroke="#00aeff" strokeType="INSIDE" style="-fx-arc-height: 20px; -fx-arc-width: 20px;" width="101.0" />
-            <Button layoutX="492.0" layoutY="388.0" mnemonicParsing="false" onAction="#switchToAdminLogin" style="-fx-background-color: white; -fx-background-radius: 20px;" text="Administrator">
-               <font>
-                  <Font name="Arial Bold" size="13.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-   </right>
 </BorderPane>

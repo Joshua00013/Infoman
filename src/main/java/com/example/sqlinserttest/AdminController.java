@@ -15,8 +15,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
@@ -97,10 +95,8 @@ public class AdminController implements Initializable {
     private ImageView closebtn;
 
     @FXML
-    private ImageView mnmbtn;
+    private ImageView mnmbtn1;
 
-    @FXML
-    private ImageView mxmbtn;
 
     @FXML
     void closeclick(MouseEvent event) {
@@ -109,7 +105,7 @@ public class AdminController implements Initializable {
 
     @FXML
     void mnmclick(MouseEvent event) {
-        Stage stage = (Stage) mnmbtn.getScene().getWindow();
+        Stage stage = (Stage) mnmbtn1.getScene().getWindow();
         stage.setIconified(true);
     }
     @FXML
@@ -128,15 +124,6 @@ public class AdminController implements Initializable {
         y = event.getSceneY();
     }
 
-    @FXML
-    void mxmclick(MouseEvent event) {
-        Stage stage = (Stage) mxmbtn.getScene().getWindow();
-        if (stage.isMaximized()) {
-            stage.setMaximized(false);
-        } else {
-            stage.setMaximized(true);
-        }
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

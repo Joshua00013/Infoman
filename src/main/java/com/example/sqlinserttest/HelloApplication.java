@@ -16,7 +16,8 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage mainstage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Homepage.fxml"));
-        mainstage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        mainstage.setScene(scene);
         mainstage.initStyle(StageStyle.UNDECORATED);
         mainstage.show();
 

@@ -9,12 +9,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import java.io.IOException;
 
 public class HomepageController {
     @FXML
-    private BorderPane Borderpane;
+    private StackPane stackpane;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -23,46 +23,26 @@ public class HomepageController {
     private ImageView closebtn;
 
     @FXML
-    private ImageView mnmbtn;
+    private ImageView mnmbtn2;
 
-    @FXML
-    private ImageView mxmbtn;
 
     private double y = 0;
     private double x = 0;
 
     @FXML
-    void bp_dragged(MouseEvent event) {
-        Stage stage = (Stage) Borderpane.getScene().getWindow();
+    void stackpane_dragged(MouseEvent event) {
+        Stage stage = (Stage) stackpane.getScene().getWindow();
         stage.setY(event.getScreenY()-y);
         stage.setX(event.getScreenX()-x);
     }
 
     @FXML
-    void bp_pressed(MouseEvent event) {
+    void stackpane_pressed(MouseEvent event) {
         x = event.getSceneX();
         y = event.getSceneY();
 
     }
-    @FXML
-    private BorderPane Borderpane;
 
-    private double y = 0;
-    private double x = 0;
-
-
-    @FXML
-    void bp_dragged(MouseEvent event) {
-        Stage stage = (Stage) Borderpane.getScene().getWindow();
-        stage.setY(event.getScreenY()-y);
-        stage.setX(event.getScreenX()-x);
-    }
-
-    @FXML
-    void bp_pressed(MouseEvent event) {
-        x = event.getSceneX();
-        y = event.getSceneY();
-    }
     @FXML
     void closeclick(MouseEvent event) {
         javafx.application.Platform.exit();
@@ -70,18 +50,10 @@ public class HomepageController {
 
     @FXML
     void mnmclick(MouseEvent event) {
-        Stage stage = (Stage) mnmbtn.getScene().getWindow();
+        Stage stage = (Stage) mnmbtn2.getScene().getWindow();
         stage.setIconified(true);
     }
 
-    @FXML
-    void mxmclick(MouseEvent event) {
-        Stage stage = (Stage) mxmbtn.getScene().getWindow();
-        if (stage.isMaximized()){
-            stage.setMaximized(false);
-        }else {stage.setMaximized(true);
-        }
-    }
     public void switchToForm1(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("formgui.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

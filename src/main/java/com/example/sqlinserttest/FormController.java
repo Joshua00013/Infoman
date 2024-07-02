@@ -10,7 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,6 +20,8 @@ import java.util.ResourceBundle;
 
 public class FormController implements Initializable {
 
+    private double y = 0;
+    private double x = 0;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -167,27 +169,21 @@ public class FormController implements Initializable {
     private ImageView mnmbtn;
 
     @FXML
-    private ImageView mxmbtn;
+    private StackPane stackpane;
 
     @FXML
-    private BorderPane Borderpane;
-
-    private double y = 0;
-    private double x = 0;
-
-
-    @FXML
-    void bp_dragged(MouseEvent event) {
-        Stage stage = (Stage) Borderpane.getScene().getWindow();
-        stage.setY(event.getScreenY()-y);
-        stage.setX(event.getScreenX()-x);
+    void stackpane_dragged(MouseEvent event) {
+        Stage stage = (Stage) stackpane.getScene().getWindow();
+        stage.setY(event.getScreenY() - y);
+        stage.setX(event.getScreenX() - x);
     }
 
     @FXML
-    void bp_pressed(MouseEvent event) {
+    void stackpane_pressed(MouseEvent event) {
         x = event.getSceneX();
         y = event.getSceneY();
     }
+
 
     @FXML
     void closeclick(MouseEvent event) {
@@ -198,15 +194,6 @@ public class FormController implements Initializable {
     void mnmclick(MouseEvent event) {
         Stage stage = (Stage) mnmbtn.getScene().getWindow();
         stage.setIconified(true);
-    }
-
-    @FXML
-    void mxmclick(MouseEvent event) {
-        Stage stage = (Stage) mxmbtn.getScene().getWindow();
-        if (stage.isMaximized()){
-            stage.setMaximized(false);
-        }else {stage.setMaximized(true);
-        }
     }
 
 

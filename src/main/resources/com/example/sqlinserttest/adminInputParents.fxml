@@ -7,76 +7,80 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="793.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminInputParent">
-    <top>
-        <StackPane prefHeight="23.0" prefWidth="900.0" BorderPane.alignment="CENTER">
-            <children>
-                <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1095.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER" />
-                <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: black;" StackPane.alignment="TOP_RIGHT">
-                    <children>
-                        <ImageView fx:id="mnmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mnmclick" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@img/icons8-minimize-window-96.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="mxmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mxmclick" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@img/icons8-maximize-window-96.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="closebtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#closeclick" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@img/icons8-close-window-96.png" />
-                            </image>
-                        </ImageView>
-                    </children>
-                </HBox>
-            </children>
-        </StackPane>
-    </top>
-   <left>
-        <AnchorPane prefHeight="760.0" prefWidth="1094.0" BorderPane.alignment="CENTER">
-            <children>
-                <Button layoutX="1006.0" layoutY="697.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
-                <Text layoutX="228.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mother's Name" />
-                <TextField fx:id="mName" layoutX="228.0" layoutY="62.0" />
-                <TextField fx:id="mEdu" layoutX="398.0" layoutY="62.0" />
-                <TextField fx:id="mOccu" layoutX="571.0" layoutY="62.0" />
-                <TextField fx:id="mIncome" layoutX="750.0" layoutY="62.0" />
-                <Text fx:id="fNameLabel" layoutX="229.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Father's Name" />
-                <TextField fx:id="fName" layoutX="227.0" layoutY="192.0" />
-                <TextField fx:id="fEdu" layoutX="398.0" layoutY="192.0" />
-                <TextField fx:id="fOccu" layoutX="571.0" layoutY="192.0" />
-                <TextField fx:id="fIncome" layoutX="750.0" layoutY="192.0" />
-                <Text layoutX="399.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Educational Attainment" />
-                <Text fx:id="fEduLabel" layoutX="399.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Educational Attainment" />
-                <Text layoutX="571.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Occupation" />
-                <Text fx:id="fOccuLabel" layoutX="571.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Occupation" />
-                <Text layoutX="750.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annual Income" />
-                <Text fx:id="fIncomeLabel" layoutX="751.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annual Income" />
-                <Text layoutX="226.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guardian's Name" />
-                <Text layoutX="399.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Educational Attainment" />
-                <TextField fx:id="gName" layoutX="225.0" layoutY="323.0" />
-                <TextField fx:id="gEdu" layoutX="396.0" layoutY="323.0" />
-                <Text layoutX="571.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Occupation" />
-                <TextField fx:id="gOccu" layoutX="569.0" layoutY="323.0" />
-                <TextField fx:id="gIncome" layoutX="748.0" layoutY="323.0" />
-                <Text layoutX="748.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annual Income" />
-                <TextField fx:id="gRelation" layoutX="931.0" layoutY="323.0" />
-                <Text layoutX="931.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Relationship" />
-                <Button layoutX="956.0" layoutY="697.0" mnemonicParsing="false" onAction="#switchToAdmin" text="Back" />
-            <TextField fx:id="mID" layoutX="36.0" layoutY="62.0" />
-            <TextField fx:id="fID" layoutX="36.0" layoutY="192.0" />
-            <TextField fx:id="gID" layoutX="36.0" layoutY="323.0" />
-            <Text layoutX="36.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mother's ID" />
-            <Text layoutX="36.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Father's ID" />
-            <Text layoutX="36.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guardian's ID" />
-            <TextField fx:id="applicantID" layoutX="36.0" layoutY="387.0" />
-            <Text layoutX="36.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Applicant ID" />
-            </children>
-        </AnchorPane>
-   </left>
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminInputParent">
+   <center>
+      <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="121.0" prefHeight="531.0" prefWidth="875.0">
+               <children>
+                  <Button layoutX="674.0" layoutY="488.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
+                  <Text layoutX="228.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mother's Name" />
+                  <TextField fx:id="mName" layoutX="223.0" layoutY="68.0" style="-fx-border-radius: 20px;" />
+                  <TextField fx:id="mEdu" layoutX="393.0" layoutY="68.0" style="-fx-border-radius: 20px;" />
+                  <TextField fx:id="mOccu" layoutX="566.0" layoutY="68.0" style="-fx-border-radius: 20px;" />
+                  <TextField fx:id="mIncome" layoutX="39.0" layoutY="183.0" style="-fx-border-radius: 20px;" />
+                  <Text fx:id="fNameLabel" layoutX="391.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Father's Name" />
+                  <TextField fx:id="fName" layoutX="384.0" layoutY="188.0" style="-fx-border-radius: 20px;" />
+                  <TextField fx:id="fEdu" layoutX="555.0" layoutY="188.0" style="-fx-border-radius: 20px;" />
+                  <TextField fx:id="fOccu" layoutX="37.0" layoutY="320.0" style="-fx-border-radius: 20px;" />
+                  <TextField fx:id="fIncome" layoutX="216.0" layoutY="320.0" style="-fx-border-radius: 20px;" />
+                  <Text layoutX="399.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Educational Attainment" />
+                  <Text fx:id="fEduLabel" layoutX="561.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Educational Attainment" />
+                  <Text layoutX="571.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Occupation" />
+                  <Text fx:id="fOccuLabel" layoutX="42.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Occupation" />
+                  <Text layoutX="44.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annual Income" />
+                  <Text fx:id="fIncomeLabel" layoutX="222.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annual Income" />
+                  <Text layoutX="584.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guardian's Name" />
+                  <Text layoutX="29.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Educational Attainment" />
+                  <TextField fx:id="gName" layoutX="578.0" layoutY="329.0" style="-fx-border-radius: 20px;" />
+                  <TextField fx:id="gEdu" layoutX="26.0" layoutY="431.0" style="-fx-border-radius: 20px;" />
+                  <Text layoutX="201.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Occupation" />
+                  <TextField fx:id="gOccu" layoutX="199.0" layoutY="431.0" style="-fx-border-radius: 20px;" />
+                  <TextField fx:id="gIncome" layoutX="364.0" layoutY="432.0" style="-fx-border-radius: 20px;" />
+                  <Text layoutX="364.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annual Income" />
+                  <TextField fx:id="gRelation" layoutX="547.0" layoutY="432.0" style="-fx-border-radius: 20px;" />
+                  <Text layoutX="547.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Relationship" />
+                  <Button layoutX="610.0" layoutY="488.0" mnemonicParsing="false" onAction="#switchToAdmin" text="Back" />
+                  <TextField fx:id="mID" layoutX="31.0" layoutY="68.0" style="-fx-border-radius: 20px;" />
+                  <TextField fx:id="fID" layoutX="193.0" layoutY="188.0" style="-fx-border-radius: 20px;" />
+                  <TextField fx:id="gID" layoutX="389.0" layoutY="329.0" style="-fx-border-radius: 20px;" />
+                  <Text layoutX="36.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mother's ID" />
+                  <Text layoutX="198.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Father's ID" />
+                  <Text layoutX="394.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guardian's ID" />
+                  <TextField fx:id="applicantID" layoutX="61.0" layoutY="515.0" style="-fx-border-radius: 20px;" />
+                  <Text layoutX="61.0" layoutY="503.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Applicant ID" />
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+   </center>
+   <top>
+      <StackPane fx:id="stackpane" onMouseDragged="#stackpane_dragged" onMousePressed="#stackpane_pressed" prefHeight="35.0" prefWidth="1038.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: black;" StackPane.alignment="TOP_RIGHT">
+               <children>
+                  <ImageView fx:id="mnmbtn2" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mnmclick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/icons8-minimize-window-96.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/icons8-maximize-window-96.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="closebtn1" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#closeclick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/icons8-close-window-96.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </StackPane>
+   </top>
 </BorderPane>
