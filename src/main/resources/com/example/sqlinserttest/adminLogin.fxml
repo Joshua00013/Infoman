@@ -22,9 +22,9 @@
          </ImageView>
          <TextField fx:id="userTextfield" layoutX="527.0" layoutY="268.0" prefHeight="38.0" prefWidth="356.0" promptText="Username" style="-fx-background-color: white; -fx-border-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-background-radius: 10;" />
          <PasswordField fx:id="passwordTextfield" layoutX="527.0" layoutY="319.0" prefHeight="38.0" prefWidth="356.0" promptText="Password" style="-fx-background-color: white; -fx-border-color: transparent; -fx-background-radius: 10px; -fx-border-width: 0px 0px 2px 0px;" />
-         <Button fx:id="loginButton" layoutX="664.0" layoutY="384.0" mnemonicParsing="false" onAction="#switchToAdmin1" prefHeight="35.0" prefWidth="94.0" style="-fx-background-color: #00AEEF; -fx-background-radius: 10px;" text="Login" textFill="WHITE">
+         <Button fx:id="loginButton" layoutX="667.0" layoutY="380.0" mnemonicParsing="false" onAction="#switchToAdmin1" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: white; -fx-background-radius: 20px;" text="Login" textFill="#00baff">
             <font>
-               <Font name="System Bold" size="20.0" />
+               <Font name="Arial Bold" size="20.0" />
             </font>
          </Button>
          <Text layoutX="140.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="165.251953125">
@@ -32,6 +32,11 @@
                <Font name="Arial Black" size="25.0" />
             </font>
          </Text>
+         <Button layoutX="866.0" layoutY="498.0" mnemonicParsing="false" onAction="#switchToHomepage1" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: transparent;" text="Back" textFill="WHITE">
+            <font>
+               <Font name="Arial Bold" size="13.0" />
+            </font>
+         </Button>
       </AnchorPane>
    </center>
    <top>

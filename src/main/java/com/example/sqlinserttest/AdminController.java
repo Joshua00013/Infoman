@@ -242,7 +242,7 @@ public class AdminController implements Initializable {
         }
     }
 
-    private void enableApplicantTableEditing() {
+    private void enableApplicantTableEditing() {  // APPLICANT DETAIL INSERT
         applicantTable.setEditable(true);
         idCol.setEditable(false);
 
@@ -410,7 +410,7 @@ public class AdminController implements Initializable {
     @FXML
     private TableColumn<applicantParent, String> incomecol;
 
-    private void populateParentsTable() {
+    private void populateParentsTable() { // INSERT TABLE
         List<applicantParent> parents = DBUtils.getAllParents();
         ObservableList<applicantParent> data = FXCollections.observableArrayList(parents);
 
