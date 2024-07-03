@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,17 +23,28 @@ public class AdminInputParent {
         stage.close(); // Close the stage
     }
 
+    private double x = 0;
+    private double y = 0;
 
     @FXML
-    void closeclick(MouseEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.close();
+    private StackPane stackpane;
+
+    @FXML
+    void stackpane_dragged(MouseEvent event) {
+        Stage stage = (Stage) stackpane.getScene().getWindow();
+        stage.setY(event.getScreenY() - y);
+        stage.setX(event.getScreenX() - x);
     }
+
+    @FXML
+    void stackpane_pressed(MouseEvent event) {
+        x = event.getSceneX();
+        y = event.getSceneY();
+    }
+
+
     @FXML
     private ImageView mnmbtn;
-
-    @FXML
-    private ImageView mxmbtn;
 
     @FXML
     void mnmclick(MouseEvent event) {
@@ -40,14 +52,6 @@ public class AdminInputParent {
         stage.setIconified(true);
     }
 
-    @FXML
-    void mxmclick(MouseEvent event) {
-        Stage stage = (Stage) mxmbtn.getScene().getWindow();
-        if (stage.isMaximized()){
-            stage.setMaximized(false);
-        }else {stage.setMaximized(true);
-        }
-    }
 
     @FXML
     private TextField mName;

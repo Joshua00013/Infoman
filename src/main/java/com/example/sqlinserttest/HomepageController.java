@@ -13,6 +13,8 @@ import javafx.scene.layout.StackPane;
 import java.io.IOException;
 
 public class HomepageController {
+
+
     @FXML
     private StackPane stackpane;
     private Stage stage;
