@@ -50,7 +50,7 @@
                                     </columns>
                                 </TableView>
                                 <Button layoutX="1369.0" layoutY="387.0" mnemonicParsing="false" onAction="#applicantDeleteButton" prefHeight="40.0" prefWidth="101.0" text="Delete" AnchorPane.bottomAnchor="35.0" AnchorPane.rightAnchor="14.0" />
-                        <Button layoutX="1369.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToInputApplicant" prefHeight="40.0" prefWidth="101.0" text="Insert" AnchorPane.bottomAnchor="86.0" AnchorPane.rightAnchor="14.0" />
+                        <Button layoutX="1369.0" layoutY="336.0" mnemonicParsing="false" onAction="#applicantWindow" prefHeight="40.0" prefWidth="101.0" text="Insert" AnchorPane.bottomAnchor="86.0" AnchorPane.rightAnchor="14.0" />
                             </children>
                         </AnchorPane>
                     </content>
@@ -59,7 +59,7 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
-                                <TableView fx:id="parenttable" layoutX="297.0" layoutY="53.0" prefHeight="200.0" prefWidth="891.0">
+                                <TableView fx:id="parenttable" layoutX="297.0" layoutY="53.0" prefHeight="200.0" prefWidth="998.0">
                                     <columns>
                                         <TableColumn fx:id="parentidcol" prefWidth="113.0" text="ParentGuardianID" />
                                         <TableColumn fx:id="applicantidcol" prefWidth="77.0" text="ApplicantID" />
@@ -67,11 +67,12 @@
                                         <TableColumn fx:id="relationcol" prefWidth="130.0" text="Relationship" />
                                         <TableColumn fx:id="educcol" prefWidth="113.0" text="EducAttainment" />
                                         <TableColumn fx:id="occucol" prefWidth="135.0" text="Occupation" />
+                              <TableColumn fx:id="employeecol" prefWidth="107.0" text="EmployeeName" />
                                         <TableColumn fx:id="incomecol" prefWidth="107.0" text="AnnualIncome" />
                                     </columns>
                                 </TableView>
                                 <Button layoutX="1369.0" layoutY="398.0" mnemonicParsing="false" onAction="#parentDeleteButton" prefHeight="40.0" prefWidth="101.0" text="Delete" AnchorPane.bottomAnchor="35.0" AnchorPane.rightAnchor="14.0" />
-                        <Button layoutX="1369.0" layoutY="334.0" mnemonicParsing="false" onAction="#switchToInputParent" prefHeight="40.0" prefWidth="101.0" text="Insert" AnchorPane.bottomAnchor="88.0" AnchorPane.rightAnchor="14.0" />
+                        <Button layoutX="1369.0" layoutY="334.0" mnemonicParsing="false" onAction="#parentWindow" prefHeight="40.0" prefWidth="101.0" text="Insert" AnchorPane.bottomAnchor="88.0" AnchorPane.rightAnchor="14.0" />
                             </children>
                         </AnchorPane>
                     </content>

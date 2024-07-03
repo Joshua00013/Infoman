@@ -89,9 +89,9 @@ public class DBUtils {
             return -1;
         }
     }
-    static void addParentDetails(int applicantId, FormController controller, String parentName, String education, String occupation, String income) {
-        String query = "INSERT INTO parentguardian_info (ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, AnnualIncome) " +
-                "VALUES (?, ?, ?, ?, ?, ?)";
+    static void addParentDetails(int applicantId, FormController controller, String parentName, String education, String occupation, String employee, String income) {
+        String query = "INSERT INTO parentguardian_info (ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, EmployeeName, AnnualIncome) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         String relationship = null;
 
@@ -110,7 +110,8 @@ public class DBUtils {
             preparedStatement.setString(3, parentName);
             preparedStatement.setString(4, education);
             preparedStatement.setString(5, occupation);
-            preparedStatement.setString(6, income);
+            preparedStatement.setString(6, employee);
+            preparedStatement.setString(7, income);
 
             preparedStatement.executeUpdate();
             System.out.println("Parent details added successfully!");
@@ -122,9 +123,9 @@ public class DBUtils {
     }
 
 
-    static void addParentDetails(int applicantId, FormController controller, String parentName, String education, String occupation, String income, String relationship) {
-        String query = "INSERT INTO parentguardian_info (ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, AnnualIncome) " +
-                "VALUES (?, ?, ?, ?, ?, ?)";
+    static void addParentDetails(int applicantId, FormController controller, String parentName, String education, String occupation, String employee, String income, String relationship) {
+        String query = "INSERT INTO parentguardian_info (ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, EmployeeName, AnnualIncome) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -133,7 +134,8 @@ public class DBUtils {
             preparedStatement.setString(3, parentName);
             preparedStatement.setString(4, education);
             preparedStatement.setString(5, occupation);
-            preparedStatement.setString(6, income);
+            preparedStatement.setString(6, employee);
+            preparedStatement.setString(7, income);
 
             preparedStatement.executeUpdate();
             System.out.println("Parent details added successfully!");
@@ -199,9 +201,10 @@ public class DBUtils {
                 String education = resultSet.getString("EducAttainment");
                 String occupation = resultSet.getString("Occupation");
                 String income = resultSet.getString("AnnualIncome");
+                String employee = resultSet.getString("EmployeeName");
                 String relation = resultSet.getString("Relationship");
 
-                applicantParent parent1 = new applicantParent(parentid, applicantid, parentname, education, occupation, income, relation);
+                applicantParent parent1 = new applicantParent(parentid, applicantid, parentname, education, occupation, employee, income, relation);
                 parents.add(parent1);
             }
 
@@ -329,14 +332,15 @@ public class DBUtils {
     }
     public static void updateParent(applicantParent updatedParent) {
         String sql = "UPDATE parentguardian_info SET ParentGuardianName = ?, EducAttainment = ?, " +
-                "Occupation = ?, AnnualIncome = ? WHERE ParentGuardianID = ?";
+                "Occupation = ?,EmployeeName = ?, AnnualIncome = ? WHERE ParentGuardianID = ?";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, updatedParent.getParentname());
             statement.setString(2, updatedParent.getEducation());
             statement.setString(3, updatedParent.getOccupation());
-            statement.setString(4, updatedParent.getAnnualincome());
-            statement.setInt(5, updatedParent.getParentid());
+            statement.setString(4, updatedParent.getEmployee());
+            statement.setString(5, updatedParent.getAnnualincome());
+            statement.setInt(6, updatedParent.getParentid());
 
             int rowsUpdated = statement.executeUpdate();
 
@@ -350,8 +354,8 @@ public class DBUtils {
             errorDialogue("SQL Error", e.getMessage());
         }
     }
-    public static void InsertGuardianDetails(String parentID, String applicantID, String parentName, String education, String occupation, String income, String relationship) {
-        String query = "INSERT INTO parentguardian_info (ParentGuardianID, ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, AnnualIncome) " +
+    public static void InsertGuardianDetails(String parentID, String applicantID, String parentName, String education, String occupation, String employee, String income, String relationship) {
+        String query = "INSERT INTO parentguardian_info (ParentGuardianID, ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, EmployeeName, AnnualIncome) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -361,7 +365,8 @@ public class DBUtils {
             preparedStatement.setString(4, parentName);
             preparedStatement.setString(5, education);
             preparedStatement.setString(6, occupation);
-            preparedStatement.setString(7, income);
+            preparedStatement.setString(7, employee);
+            preparedStatement.setString(8, income);
 
             preparedStatement.executeUpdate();
             System.out.println("Parent details added successfully!");
@@ -371,9 +376,9 @@ public class DBUtils {
             e.printStackTrace();
         }
     }
-    public static void InsertMotherDetails(String parentID, String applicantID, String parentName, String education, String occupation, String income, String relationship) {
-        String query = "INSERT INTO parentguardian_info (ParentGuardianID, ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, AnnualIncome) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?)";
+    public static void InsertParentDetails(String parentID, String applicantID, String parentName, String education, String occupation, String employee, String income, String relationship) {
+        String query = "INSERT INTO parentguardian_info (ParentGuardianID, ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, EmployeeName, AnnualIncome)" +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, parentID);
             preparedStatement.setString(2, applicantID);
@@ -381,7 +386,8 @@ public class DBUtils {
             preparedStatement.setString(4, parentName);
             preparedStatement.setString(5, education);
             preparedStatement.setString(6, occupation);
-            preparedStatement.setString(7, income);
+            preparedStatement.setString(7, employee);
+            preparedStatement.setString(8, income);
 
             preparedStatement.executeUpdate();
             System.out.println("Parent details added successfully!");
@@ -391,26 +397,7 @@ public class DBUtils {
             e.printStackTrace();
         }
     }
-    public static void InsertFatherDetails(String parentID, String applicantID, String parentName, String education, String occupation, String income, String relationship) {
-        String query = "INSERT INTO parentguardian_info (ParentGuardianID, ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, AnnualIncome) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-            preparedStatement.setString(1, parentID);
-            preparedStatement.setString(2, applicantID);
-            preparedStatement.setString(3, relationship);
-            preparedStatement.setString(4, parentName);
-            preparedStatement.setString(5, education);
-            preparedStatement.setString(6, occupation);
-            preparedStatement.setString(7, income);
 
-            preparedStatement.executeUpdate();
-            System.out.println("Parent details added successfully!");
-        } catch (SQLException e) {
-            System.out.println("Error occurred while adding parent details");
-            errorDialogue("SQL Error", e.getMessage());
-            e.printStackTrace();
-        }
-    }
 
 
 }

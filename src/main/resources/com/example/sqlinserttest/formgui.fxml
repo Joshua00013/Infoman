@@ -26,7 +26,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="571.2" prefWidth="942.4" style="-fx-background-color: #F5F7F9;">
                      <children>
-                        <ImageView fitHeight="600.0" fitWidth="196.0" layoutX="-10.0" layoutY="-33.0" pickOnBounds="true">
+                        <ImageView fitHeight="567.0" fitWidth="196.0" layoutX="-10.0" pickOnBounds="true">
                            <image>
                               <Image url="@img/DOST (3).png" />
                            </image>
@@ -187,9 +187,9 @@
                               <Font name="Arial" size="12.0" />
                            </font>
                         </Text>
-                        <TextField layoutX="562.0" layoutY="160.0" prefHeight="26.0" prefWidth="181.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
-                        <TextField layoutX="556.0" layoutY="295.0" prefHeight="26.0" prefWidth="182.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
-                        <TextField layoutX="556.0" layoutY="424.0" prefHeight="26.0" prefWidth="183.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
+                        <TextField fx:id="mEmployee" layoutX="562.0" layoutY="160.0" prefHeight="26.0" prefWidth="181.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
+                        <TextField fx:id="fEmployee" layoutX="556.0" layoutY="295.0" prefHeight="26.0" prefWidth="182.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
+                        <TextField fx:id="gEmployee" layoutX="556.0" layoutY="424.0" prefHeight="26.0" prefWidth="183.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
                         <Text fill="WHITE" layoutX="70.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: poppins; -fx-font-weight: bold;" text="Applicant" textAlignment="CENTER">
                            <font>
                               <Font name="Arial" size="10.0" />

@@ -7,16 +7,19 @@ public class applicantParent {
     private String relationship;
     private String education;
     private String occupation;
+    private String employee;
+
     private String annualincome;
 
 
 
-    public applicantParent(int parentid, int applicantId, String parentName, String education, String occupation, String income, String relation){
+    public applicantParent(int parentid, int applicantId, String parentName, String education, String occupation, String employer, String income, String relation){
         setParentid(parentid);
         setChildid(applicantId);
         setParentname(parentName);
         setEducation(education);
         setOccupation(occupation);
+        setEmployee(employer);
         setAnnualincome(income);
         setRelationship(relation);
     }
@@ -66,6 +69,14 @@ public class applicantParent {
 
     public void setOccupation(String occupation) {
         this.occupation = occupation;
+    }
+
+    public String getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(String employee) {
+        this.employee = employee;
     }
 
     public String getAnnualincome() {

@@ -120,6 +120,9 @@ public class FormController implements Initializable {
     private TextField fOccu;
 
     @FXML
+    private TextField fEmployee;
+
+    @FXML
     private TextField gEdu;
 
     @FXML
@@ -130,6 +133,9 @@ public class FormController implements Initializable {
 
     @FXML
     private TextField gOccu;
+
+    @FXML
+    private TextField gEmployee;
 
     @FXML
     private TextField gRelation;
@@ -145,6 +151,9 @@ public class FormController implements Initializable {
 
     @FXML
     private TextField mOccu;
+
+    @FXML
+    private TextField mEmployee;
 
     @FXML
     private ChoiceBox<String> passport;
@@ -212,11 +221,11 @@ public class FormController implements Initializable {
                     Integer.parseInt(siblings.getText()), Integer.parseInt(birthOrder.getText()), course.getText(),
                     uniname.getText(), uniAddress.getText(), passport.getValue());
 
-            DBUtils.addParentDetails(applicantID, this, mName.getText(), mEdu.getText(), mOccu.getText(), mIncome.getText());
-            DBUtils.addParentDetails(applicantID, this, fName.getText(), fEdu.getText(), fOccu.getText(), fIncome.getText());
+            DBUtils.addParentDetails(applicantID, this, mName.getText(), mEdu.getText(), mOccu.getText(),mEmployee.getText() ,mIncome.getText());
+            DBUtils.addParentDetails(applicantID, this, fName.getText(), fEdu.getText(), fOccu.getText(),fEmployee.getText(), fIncome.getText());
 
             if (!gEdu.getText().isEmpty()) {
-                DBUtils.addParentDetails(applicantID, this, gName.getText(), gEdu.getText(), gOccu.getText(), gIncome.getText(), gRelation.getText());
+                DBUtils.addParentDetails(applicantID, this, gName.getText(), gEdu.getText(), gOccu.getText(),gEmployee.getText(), gIncome.getText(), gRelation.getText());
             }
             DBUtils.closeConnection();
         }catch (NullPointerException e){
