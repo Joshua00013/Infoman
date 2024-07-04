@@ -25,7 +25,7 @@ public class HomepageController {
     private ImageView closebtn;
 
     @FXML
-    private ImageView mnmbtn2;
+    private ImageView mnmbtn;
 
 
     private double y = 0;
@@ -52,7 +52,7 @@ public class HomepageController {
 
     @FXML
     void mnmclick(MouseEvent event) {
-        Stage stage = (Stage) mnmbtn2.getScene().getWindow();
+        Stage stage = (Stage) mnmbtn.getScene().getWindow();
         stage.setIconified(true);
     }
 

@@ -8,9 +8,15 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.scene.control.Hyperlink;
+
+import java.awt.*;
+import java.net.URI;
+import java.net.URISyntaxException;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -179,6 +185,27 @@ public class FormController implements Initializable {
 
     @FXML
     private StackPane stackpane;
+    @FXML
+    private Hyperlink about_us;
+
+    @FXML
+    void about_us(ActionEvent event) {
+        try {
+            if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+                Desktop desktop = Desktop.getDesktop();
+                desktop.browse(new URI("https://www.dost.gov.ph/"));
+            } else {
+                // Handle the case where Desktop or the browse action is not supported
+                System.err.println("Desktop or browse action is not supported");
+            }
+        } catch (IOException | URISyntaxException e) {
+            // Handle exceptions appropriately
+            e.printStackTrace();
+        }
+    }
+
+
+
 
     @FXML
     void stackpane_dragged(MouseEvent event) {
