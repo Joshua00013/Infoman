@@ -14,8 +14,8 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminLoginController">
    <center>
-      <AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
-         <ImageView fitHeight="647.0" fitWidth="1000.0" layoutX="-12.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+      <AnchorPane prefHeight="635.0" prefWidth="952.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <ImageView fitHeight="627.0" fitWidth="1029.0" layoutX="-23.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@img/DostLoginAdmin.png" />
             </image>
@@ -38,7 +38,7 @@
                <Font name="Arial Black" size="25.0" />
             </font>
          </Text>
-         <Button layoutX="905.0" layoutY="646.0" mnemonicParsing="false" onAction="#switchToHomepage1" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: transparent;" text="Back" textFill="#0e194d">
+         <Button layoutX="905.0" layoutY="570.0" mnemonicParsing="false" onAction="#switchToHomepage1" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: transparent;" text="Back" textFill="#0e194d">
             <font>
                <Font name="Arial Bold" size="15.0" />
             </font>
