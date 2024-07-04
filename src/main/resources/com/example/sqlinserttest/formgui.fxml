@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
@@ -36,39 +37,39 @@
                            <font>
                               <Font name="Arial" size="12.0" />
                            </font></Text>
-                        <TextField fx:id="birthplace" layoutX="521.0" layoutY="215.0" prefHeight="26.0" prefWidth="444.0" promptText="Enter birthplace" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
+                        <TextField fx:id="birthplace" layoutX="521.0" layoutY="212.0" prefHeight="26.0" prefWidth="444.0" promptText="Enter birthplace" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
                         <ChoiceBox fx:id="scholarshipChoiceBox" layoutX="325.0" layoutY="121.0" opacity="0.64" prefHeight="26.0" prefWidth="101.0" style="-fx-background-radius: 20PX;" />
                         <Text layoutX="220.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Scholarship Type">
                            <font>
                               <Font name="Arial" size="12.0" />
                            </font></Text>
                         <Text layoutX="220.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Sex" />
-                        <ChoiceBox fx:id="sexChoiceBox" layoutX="252.0" layoutY="168.0" opacity="0.64" prefHeight="26.0" prefWidth="147.0" style="-fx-background-radius: 20PX;" />
+                        <ChoiceBox fx:id="sexChoiceBox" layoutX="252.0" layoutY="169.0" opacity="0.64" prefHeight="26.0" prefWidth="79.0" style="-fx-background-radius: 20PX;" />
                         <Text layoutX="737.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Birthday" />
                         <DatePicker fx:id="birthdayPicker" layoutX="786.0" layoutY="121.0" prefHeight="26.0" prefWidth="174.0" promptText="Enter a date" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
-                        <Text layoutX="461.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Birthplace" />
-                        <TextField fx:id="citizenship" layoutX="300.0" layoutY="218.0" promptText="Enter citizenship" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
-                        <Text layoutX="220.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Citizenship" />
+                        <Text layoutX="461.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Birthplace" />
+                        <TextField fx:id="citizenship" layoutX="290.0" layoutY="212.0" prefHeight="25.0" prefWidth="159.0" promptText="Enter citizenship" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
+                        <Text layoutX="220.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Citizenship" />
                         <ChoiceBox fx:id="dualCitizStatusChoiceBox" layoutX="344.0" layoutY="260.0" opacity="0.64" prefHeight="26.0" prefWidth="70.0" style="-fx-background-radius: 20PX;" />
                         <Text layoutX="220.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Has dual citizenship?" />
-                        <TextField fx:id="contactno" layoutX="538.0" layoutY="168.0" prefHeight="26.0" prefWidth="191.0" promptText="Enter contact number" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
-                        <Text layoutX="439.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Contact Number" />
-                        <TextField fx:id="email" layoutX="307.0" layoutY="316.0" prefHeight="26.0" prefWidth="163.0" promptText="Enter Email address" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
-                        <Text layoutX="220.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Email Address" />
+                        <TextField fx:id="contactno" layoutX="442.0" layoutY="169.0" prefHeight="26.0" prefWidth="136.0" promptText="Enter contact number" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
+                        <Text layoutX="343.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Contact Number" />
+                        <TextField fx:id="email" layoutX="307.0" layoutY="310.0" prefHeight="26.0" prefWidth="176.0" promptText="Enter Email address" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
+                        <Text layoutX="220.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Email Address" />
                         <Text layoutX="434.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Permanent Address" />
-                        <Text layoutX="220.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="No. of Siblings" />
-                        <Text layoutX="743.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Birth Order" />
-                        <Text layoutX="221.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Course" />
+                        <Text layoutX="588.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="No. of Siblings" />
+                        <Text layoutX="783.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Birth Order" />
+                        <Text layoutX="687.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Course" />
                         <Text layoutX="498.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="University Name" />
-                        <Text layoutX="498.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="University Address" wrappingWidth="123.39886474609375" />
-                        <Text layoutX="538.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Has a passport?" />
-                        <ChoiceBox fx:id="passport" layoutX="647.0" layoutY="394.0" opacity="0.64" prefHeight="26.0" prefWidth="68.0" style="-fx-background-radius: 20PX;" />
-                        <TextField fx:id="course" layoutX="278.0" layoutY="399.0" prefHeight="26.0" prefWidth="242.0" promptText="Enter course" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
+                        <Text layoutX="218.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="University Address" wrappingWidth="123.39886474609375" />
+                        <Text layoutX="219.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Has a passport?" />
+                        <ChoiceBox fx:id="passport" layoutX="326.0" layoutY="393.0" opacity="0.64" prefHeight="26.0" prefWidth="88.0" style="-fx-background-radius: 20PX;" />
+                        <TextField fx:id="course" layoutX="738.0" layoutY="353.0" prefHeight="26.0" prefWidth="227.0" promptText="Enter course" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
                         <TextField fx:id="uniname" layoutX="605.0" layoutY="310.0" prefHeight="26.0" prefWidth="358.0" promptText="Enter University Name" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
-                        <TextField fx:id="uniAddress" layoutX="616.0" layoutY="351.0" prefHeight="26.0" prefWidth="345.0" promptText="Enter University Address" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
-                        <TextField fx:id="permAddress" layoutX="554.0" layoutY="259.0" prefHeight="26.0" prefWidth="410.0" promptText="Enter permanent address" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
-                        <TextField fx:id="siblings" layoutX="308.0" layoutY="360.0" prefHeight="26.0" prefWidth="140.0" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
-                        <TextField fx:id="birthOrder" layoutX="813.0" layoutY="169.0" prefHeight="26.0" prefWidth="151.0" promptText="Enter birth order" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
+                        <TextField fx:id="uniAddress" layoutX="333.0" layoutY="353.0" prefHeight="26.0" prefWidth="345.0" promptText="Enter University Address" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
+                        <TextField fx:id="permAddress" layoutX="554.0" layoutY="260.0" prefHeight="26.0" prefWidth="410.0" promptText="Enter permanent address" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
+                        <TextField fx:id="siblings" layoutX="673.0" layoutY="169.0" prefHeight="26.0" prefWidth="94.0" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
+                        <TextField fx:id="birthOrder" layoutX="853.0" layoutY="169.0" prefHeight="26.0" prefWidth="111.0" promptText="Enter birth order" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
                         <Button layoutX="762.0" layoutY="476.0" mnemonicParsing="false" onAction="#switchToHomepage1" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: #0e194d; -fx-background-radius: 20px;" text="Back" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="12.0" />
@@ -110,14 +111,14 @@
                            </image>
                         </ImageView>
                         <Line endX="49.600006103515625" layoutX="116.0" layoutY="479.0" startX="-100.0" stroke="WHITE" />
-                        <Text fill="#fafafa" layoutX="62.0" layoutY="505.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: poppins; -fx-font-weight: bold;" text="About Us" textAlignment="CENTER">
+                        <Hyperlink fx:id="about_us" layoutX="54.0" layoutY="490.0" onAction="#about_us" text="About Us" textFill="WHITE">
                            <font>
-                              <Font name="Arial" size="12.0" />
+                              <Font name="Arial Bold" size="12.0" />
                            </font>
-                        </Text>
+                        </Hyperlink>
                         <ImageView fitHeight="18.0" fitWidth="39.0" layoutX="30.0" layoutY="492.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@img/9.png" />
+                              <Image url="@img/about-us.png" />
                            </image>
                         </ImageView>
 
@@ -175,12 +176,12 @@
                            <font>
                               <Font name="Arial" size="12.0" />
                            </font></Text>
-                        <Text layoutX="533.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: black;" text="Educational Attainment">
+                        <Text layoutX="720.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: black;" text="Educational Attainment">
                            <font>
                               <Font name="Arial" size="12.0" />
                            </font></Text>
                         <TextField fx:id="gName" layoutX="319.0" layoutY="381.0" prefHeight="26.0" prefWidth="191.0" promptText="Enter Gurdian's name" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
-                        <TextField fx:id="gEdu" layoutX="665.0" layoutY="382.0" prefHeight="26.0" prefWidth="121.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
+                        <TextField fx:id="gEdu" layoutX="846.0" layoutY="381.0" prefHeight="26.0" prefWidth="121.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
                         <Text layoutX="215.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: black;" text="Occupation">
                            <font>
                               <Font name="Arial" size="12.0" />
@@ -191,8 +192,8 @@
                            <font>
                               <Font name="Arial" size="12.0" />
                            </font></Text>
-                        <TextField fx:id="gRelation" layoutX="893.0" layoutY="381.0" prefHeight="26.0" prefWidth="94.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
-                        <Text layoutX="813.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: black;" text="Relationship">
+                        <TextField fx:id="gRelation" layoutX="592.0" layoutY="381.0" prefHeight="26.0" prefWidth="117.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
+                        <Text layoutX="523.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: black;" text="Relationship">
                            <font>
                               <Font name="Arial" size="12.0" />
                            </font></Text>
@@ -256,14 +257,9 @@
                         </ImageView>
                         <ImageView fitHeight="18.0" fitWidth="39.0" layoutX="30.0" layoutY="492.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@img/9.png" />
+                              <Image url="@img/about-us.png" />
                            </image>
                         </ImageView>
-                        <Text fill="#fafafa" layoutX="62.0" layoutY="505.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: poppins; -fx-font-weight: bold;" text="About Us" textAlignment="CENTER">
-                           <font>
-                              <Font name="Arial" size="12.0" />
-                           </font>
-                        </Text>
                         <ImageView fitHeight="18.0" fitWidth="39.0" layoutX="37.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@img/8.png" />
@@ -274,6 +270,11 @@
                               <Font name="Arial" size="12.0" />
                            </font>
                         </Text>
+                        <Hyperlink fx:id="about_us1" layoutX="54.0" layoutY="490.0" onAction="#about_us" text="About Us" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Hyperlink>
 
                      </children>
                   </AnchorPane>

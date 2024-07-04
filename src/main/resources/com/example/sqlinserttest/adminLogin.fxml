@@ -14,15 +14,21 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.AdminLoginController">
    <center>
-      <AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
-         <ImageView fitHeight="575.0" fitWidth="1019.0" layoutX="-11.0" pickOnBounds="true" preserveRatio="true">
+      <AnchorPane prefHeight="635.0" prefWidth="952.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <ImageView fitHeight="627.0" fitWidth="1029.0" layoutX="-23.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@img/adminLogin.png" />
+               <Image url="@img/DostLoginAdmin.png" />
             </image>
          </ImageView>
-         <TextField fx:id="userTextfield" layoutX="559.0" layoutY="282.0" prefHeight="38.0" prefWidth="356.0" promptText="Username" style="-fx-background-color: white; -fx-border-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-background-radius: 10;" />
-         <PasswordField fx:id="passwordTextfield" layoutX="560.0" layoutY="333.0" prefHeight="38.0" prefWidth="356.0" promptText="Password" style="-fx-background-color: white; -fx-border-color: transparent; -fx-background-radius: 10px; -fx-border-width: 0px 0px 2px 0px;" />
-         <Button fx:id="loginButton" layoutX="645.0" layoutY="387.0" mnemonicParsing="false" onAction="#switchToAdmin1" prefHeight="37.0" prefWidth="193.0" style="-fx-background-color: white; -fx-background-radius: 20px;" text="Login" textFill="#00baff">
+         <TextField fx:id="userTextfield" layoutX="590.0" layoutY="282.0" prefHeight="38.0" prefWidth="320.0" promptText="Username" style="-fx-background-color: white; -fx-border-color: #0e194d; -fx-border-width: 0px 0px 2px 0px; -fx-background-radius: 10;">
+            <font>
+               <Font size="15.0" />
+            </font></TextField>
+         <PasswordField fx:id="passwordTextfield" layoutX="591.0" layoutY="333.0" prefHeight="38.0" prefWidth="320.0" promptText="Password" style="-fx-background-color: white; -fx-border-color: #0e194d; -fx-background-radius: 10px; -fx-border-width: 0px 0px 2px 0px;">
+            <font>
+               <Font size="15.0" />
+            </font></PasswordField>
+         <Button fx:id="loginButton" layoutX="645.0" layoutY="387.0" mnemonicParsing="false" onAction="#switchToAdmin1" prefHeight="37.0" prefWidth="193.0" style="-fx-background-color: #0e194d; -fx-background-radius: 20px;" text="Login" textFill="WHITE">
             <font>
                <Font name="Arial Bold" size="20.0" />
             </font>
@@ -32,11 +38,21 @@
                <Font name="Arial Black" size="25.0" />
             </font>
          </Text>
-         <Button layoutX="905.0" layoutY="512.0" mnemonicParsing="false" onAction="#switchToHomepage1" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: transparent;" text="Back" textFill="WHITE">
+         <Button layoutX="905.0" layoutY="570.0" mnemonicParsing="false" onAction="#switchToHomepage1" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: transparent;" text="Back" textFill="#0e194d">
             <font>
-               <Font name="Arial Bold" size="13.0" />
+               <Font name="Arial Bold" size="15.0" />
             </font>
          </Button>
+         <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="558.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@img/icons8-password-64.png" />
+            </image>
+         </ImageView>
+         <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="558.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@img/username-icon.png" />
+            </image>
+         </ImageView>
       </AnchorPane>
    </center>
    <top>
