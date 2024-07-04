@@ -28,7 +28,7 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="571.2" prefWidth="942.4" style="-fx-background-color: #F5F7F9;">
                      <children>
                         <TextField fx:id="name" layoutX="496.0" layoutY="121.0" prefHeight="26.0" prefWidth="225.0" promptText="Enter a name" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
-                        <ImageView fitHeight="600.0" fitWidth="196.0" layoutX="-10.0" layoutY="-33.0" pickOnBounds="true">
+                        <ImageView fitHeight="569.0" fitWidth="196.0" layoutX="-10.0" layoutY="-2.0" pickOnBounds="true">
                            <image>
                               <Image url="@img/DOST (3).png" />
                            </image>
@@ -52,7 +52,7 @@
                         <Text layoutX="220.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Citizenship" />
                         <ChoiceBox fx:id="dualCitizStatusChoiceBox" layoutX="344.0" layoutY="260.0" opacity="0.64" prefHeight="26.0" prefWidth="70.0" style="-fx-background-radius: 20PX;" />
                         <Text layoutX="220.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Has dual citizenship?" />
-                        <TextField fx:id="contactno" layoutX="442.0" layoutY="169.0" prefHeight="26.0" prefWidth="136.0" promptText="Enter contact number" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
+                        <TextField fx:id="contactno" layoutX="442.0" layoutY="169.0" onKeyTyped="#checkElevenDigits" prefHeight="26.0" prefWidth="136.0" promptText="Enter contact number" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
                         <Text layoutX="343.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Contact Number" />
                         <TextField fx:id="email" layoutX="307.0" layoutY="310.0" prefHeight="26.0" prefWidth="176.0" promptText="Enter Email address" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
                         <Text layoutX="220.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: arial; -fx-fill: black;" text="Email Address" />
@@ -68,8 +68,8 @@
                         <TextField fx:id="uniname" layoutX="605.0" layoutY="310.0" prefHeight="26.0" prefWidth="358.0" promptText="Enter University Name" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
                         <TextField fx:id="uniAddress" layoutX="333.0" layoutY="353.0" prefHeight="26.0" prefWidth="345.0" promptText="Enter University Address" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
                         <TextField fx:id="permAddress" layoutX="554.0" layoutY="260.0" prefHeight="26.0" prefWidth="410.0" promptText="Enter permanent address" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
-                        <TextField fx:id="siblings" layoutX="673.0" layoutY="169.0" prefHeight="26.0" prefWidth="94.0" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
-                        <TextField fx:id="birthOrder" layoutX="853.0" layoutY="169.0" prefHeight="26.0" prefWidth="111.0" promptText="Enter birth order" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
+                        <TextField fx:id="siblings" layoutX="673.0" layoutY="169.0" onKeyTyped="#checkInt" prefHeight="26.0" prefWidth="94.0" promptText="Enter no. of siblings" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
+                        <TextField fx:id="birthOrder" layoutX="853.0" layoutY="169.0" onKeyTyped="#checkInt" prefHeight="26.0" prefWidth="111.0" promptText="Enter birth order" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
                         <Button layoutX="762.0" layoutY="476.0" mnemonicParsing="false" onAction="#switchToHomepage1" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: #0e194d; -fx-background-radius: 20px;" text="Back" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="12.0" />
@@ -130,7 +130,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #F5F7F9;">
                      <children>
-                        <ImageView fitHeight="600.0" fitWidth="196.0" layoutX="-10.0" layoutY="-33.0" pickOnBounds="true">
+                        <ImageView fitHeight="571.0" fitWidth="196.0" layoutX="-10.0" layoutY="-4.0" pickOnBounds="true">
                            <image>
                               <Image url="@img/DOST (3).png" />
                            </image>
@@ -142,7 +142,7 @@
                         <TextField fx:id="mName" layoutX="309.0" layoutY="119.0" prefHeight="26.0" prefWidth="299.0" promptText="Enter Mother's name" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
                         <TextField fx:id="mEdu" layoutX="770.0" layoutY="119.0" prefHeight="26.0" prefWidth="197.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
                         <TextField fx:id="mOccu" layoutX="280.0" layoutY="161.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
-                        <TextField fx:id="mIncome" layoutX="846.0" layoutY="161.0" prefHeight="26.0" prefWidth="122.0" promptText="000000.00" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
+                        <TextField fx:id="mIncome" layoutX="846.0" layoutY="161.0" onKeyTyped="#checkInt" prefHeight="26.0" prefWidth="122.0" promptText="000000.00" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
                         <Text fx:id="fNameLabel" layoutX="213.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: black;" text="Father's Name">
                            <font>
                               <Font name="Arial" size="12.0" />
@@ -150,7 +150,7 @@
                         <TextField fx:id="fName" layoutX="309.0" layoutY="251.0" prefHeight="26.0" prefWidth="299.0" promptText="Enter Mother's name" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
                         <TextField fx:id="fEdu" layoutX="766.0" layoutY="250.0" prefHeight="26.0" prefWidth="198.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
                         <TextField fx:id="fOccu" layoutX="282.0" layoutY="293.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
-                        <TextField fx:id="fIncome" layoutX="848.0" layoutY="295.0" prefHeight="26.0" prefWidth="117.0" promptText="000000.00" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
+                        <TextField fx:id="fIncome" layoutX="848.0" layoutY="295.0" onKeyTyped="#checkInt" prefHeight="26.0" prefWidth="117.0" promptText="000000.00" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
                         <Text layoutX="630.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: black;" text="Educational Attainment">
                            <font>
                               <Font name="Arial" size="12.0" />
@@ -187,7 +187,7 @@
                               <Font name="Arial" size="12.0" />
                            </font></Text>
                         <TextField fx:id="gOccu" layoutX="282.0" layoutY="422.0" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
-                        <TextField fx:id="gIncome" layoutX="846.0" layoutY="423.0" prefHeight="26.0" prefWidth="121.0" promptText="000000.00" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
+                        <TextField fx:id="gIncome" layoutX="846.0" layoutY="423.0" onKeyTyped="#checkInt" prefHeight="26.0" prefWidth="121.0" promptText="000000.00" style="-fx-background-color: #E8E8E8; -fx-background-radius: 20px;" />
                         <Text layoutX="754.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: black;" text="Annual Income">
                            <font>
                               <Font name="Arial" size="12.0" />
