@@ -8,8 +8,15 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
+import javafx.scene.control.Hyperlink;
+
+import java.awt.*;
+import java.net.URI;
+import java.net.URISyntaxException;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,6 +26,8 @@ import java.util.ResourceBundle;
 
 public class FormController implements Initializable {
 
+    private double y = 0;
+    private double x = 0;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -175,7 +184,42 @@ public class FormController implements Initializable {
     private ImageView mnmbtn;
 
     @FXML
-    private ImageView mxmbtn;
+    private StackPane stackpane;
+    @FXML
+    private Hyperlink about_us;
+
+    @FXML
+    void about_us(ActionEvent event) {
+        try {
+            if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+                Desktop desktop = Desktop.getDesktop();
+                desktop.browse(new URI("https://www.dost.gov.ph/"));
+            } else {
+                // Handle the case where Desktop or the browse action is not supported
+                System.err.println("Desktop or browse action is not supported");
+            }
+        } catch (IOException | URISyntaxException e) {
+            // Handle exceptions appropriately
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+    @FXML
+    void stackpane_dragged(MouseEvent event) {
+        Stage stage = (Stage) stackpane.getScene().getWindow();
+        stage.setY(event.getScreenY() - y);
+        stage.setX(event.getScreenX() - x);
+    }
+
+    @FXML
+    void stackpane_pressed(MouseEvent event) {
+        x = event.getSceneX();
+        y = event.getSceneY();
+    }
+
 
     @FXML
     void closeclick(MouseEvent event) {
@@ -186,15 +230,6 @@ public class FormController implements Initializable {
     void mnmclick(MouseEvent event) {
         Stage stage = (Stage) mnmbtn.getScene().getWindow();
         stage.setIconified(true);
-    }
-
-    @FXML
-    void mxmclick(MouseEvent event) {
-        Stage stage = (Stage) mxmbtn.getScene().getWindow();
-        if (stage.isMaximized()){
-            stage.setMaximized(false);
-        }else {stage.setMaximized(true);
-        }
     }
 
 

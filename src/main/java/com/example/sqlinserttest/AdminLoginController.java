@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -25,9 +26,6 @@ public class AdminLoginController {
     private ImageView mnmbtn;
 
     @FXML
-    private ImageView mxmbtn;
-
-    @FXML
     private Button loginButton;
 
     @FXML
@@ -35,6 +33,14 @@ public class AdminLoginController {
 
     @FXML
     private TextField userTextfield;
+
+    @FXML
+    private StackPane stackpane;
+
+    private double y = 0;
+    private double x = 0;
+
+
 
     @FXML
     void closeclick(MouseEvent event) {
@@ -48,13 +54,18 @@ public class AdminLoginController {
     }
 
     @FXML
-    void mxmclick(MouseEvent event) {
-        Stage stage = (Stage) mxmbtn.getScene().getWindow();
-        if (stage.isMaximized()){
-            stage.setMaximized(false);
-        }else {stage.setMaximized(true);
+    void stackpane_dragged(MouseEvent event) {
+        Stage stage = (Stage) stackpane.getScene().getWindow();
+        stage.setY(event.getScreenY() - y);
+        stage.setX(event.getScreenX() - x);
     }
+
+    @FXML
+    void stackpane_pressed(MouseEvent event) {
+        x = event.getSceneX();
+        y = event.getSceneY();
     }
+
 
     public void switchToAdmin1(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("admin.fxml"));
