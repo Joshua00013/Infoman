@@ -15,6 +15,13 @@ public class DBUtils {
         alert.setHeaderText(title);
         alert.showAndWait();
     }
+    public static void successDialogue(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText("Information submitted");
+        alert.setContentText("You have successfully applied!");
+        alert.showAndWait();
+    }
     private static Connection connection;
     public static void establishConnection() {
         String url = "jdbc:mysql://localhost:3306/scholarshipdb";

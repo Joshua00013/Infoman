@@ -219,10 +219,47 @@ public class FormController implements Initializable {
             if (!gEdu.getText().isEmpty()) {
                 DBUtils.addParentDetails(applicantID, this, gName.getText(), gEdu.getText(), gOccu.getText(),gEmployee.getText(), gIncome.getText(), gRelation.getText());
             }
+            DBUtils.successDialogue();
+            clearFields();
             DBUtils.closeConnection();
         }catch (NullPointerException e){
             DBUtils.errorDialogue("Null Pointer Exception", "Please fill up all the required fields!");
         }
+
+    }
+    private void clearFields() {
+        name.clear();
+        scholarshipChoiceBox.getSelectionModel().clearSelection();
+        sexChoiceBox.getSelectionModel().clearSelection();
+        birthdayPicker.setValue(null);
+        birthplace.clear();
+        citizenship.clear();
+        dualCitizStatusChoiceBox.getSelectionModel().clearSelection();
+        contactno.clear();
+        email.clear();
+        fEdu.clear();
+        fIncome.clear();
+        fName.clear();
+        fOccu.clear();
+        fEmployee.clear();
+        gEdu.clear();
+        gIncome.clear();
+        gName.clear();
+        gOccu.clear();
+        gEmployee.clear();
+        gRelation.clear();
+        mEdu.clear();
+        mIncome.clear();
+        mName.clear();
+        mOccu.clear();
+        mEmployee.clear();
+        passport.getSelectionModel().clearSelection();
+        permAddress.clear();
+        siblings.clear();
+        uniAddress.clear();
+        uniname.clear();
+        course.clear();
+        birthOrder.clear();
     }
 
 
