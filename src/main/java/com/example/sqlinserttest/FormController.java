@@ -32,7 +32,7 @@ public class FormController implements Initializable {
         String character = event.getCharacter();
 
         // Check if the character is not a digit
-        if (!character.matches("[0-9]")) {
+        if (!character.matches("[0-9.]")) {
             // If not a digit, prevent the character from being added to the text
             TextField textField = (TextField) event.getSource();
             int caretPosition = textField.getCaretPosition();
