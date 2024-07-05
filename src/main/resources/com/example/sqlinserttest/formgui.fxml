@@ -19,16 +19,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.FormController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.FormController">
    <center>
-      <TabPane fx:id="tabPane" prefHeight="727.0" prefWidth="1094.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <TabPane fx:id="tabPane" prefHeight="600.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
       <tabs>
           <Tab fx:id="tab1" closable="false" text="Untitled Tab 1">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="571.2" prefWidth="942.4" style="-fx-background-color: #F5F7F9;">
                      <children>
                         <TextField fx:id="name" layoutX="496.0" layoutY="121.0" prefHeight="26.0" prefWidth="225.0" promptText="Enter a name" style="-fx-background-radius: 20PX; -fx-background-color: #E8E8E8;" />
-                        <ImageView fitHeight="569.0" fitWidth="196.0" layoutX="-10.0" layoutY="-2.0" pickOnBounds="true">
+                        <ImageView fitHeight="569.0" fitWidth="196.0" layoutX="-10.0" layoutY="-7.0" pickOnBounds="true">
                            <image>
                               <Image url="@img/DOST (3).png" />
                            </image>
@@ -111,14 +111,14 @@
                            </image>
                         </ImageView>
                         <Line endX="49.600006103515625" layoutX="116.0" layoutY="479.0" startX="-100.0" stroke="WHITE" />
-                        <Hyperlink fx:id="about_us" layoutX="54.0" layoutY="490.0" onAction="#about_us" text="About Us" textFill="WHITE">
+                        <Hyperlink fx:id="about_us" layoutX="65.0" layoutY="490.0" onAction="#about_us" text="About Us" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="12.0" />
                            </font>
                         </Hyperlink>
-                        <ImageView fitHeight="18.0" fitWidth="39.0" layoutX="30.0" layoutY="492.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="17.0" fitWidth="15.0" layoutX="41.0" layoutY="494.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@img/about-us.png" />
+                              <Image url="@img/about_us_icon.png" />
                            </image>
                         </ImageView>
 
@@ -130,7 +130,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #F5F7F9;">
                      <children>
-                        <ImageView fitHeight="571.0" fitWidth="196.0" layoutX="-10.0" layoutY="-4.0" pickOnBounds="true">
+                        <ImageView fitHeight="569.0" fitWidth="196.0" layoutX="-10.0" layoutY="-6.0" pickOnBounds="true">
                            <image>
                               <Image url="@img/DOST (3).png" />
                            </image>
@@ -197,7 +197,7 @@
                            <font>
                               <Font name="Arial" size="12.0" />
                            </font></Text>
-                        <Button layoutX="762.0" layoutY="475.0" mnemonicParsing="false" onAction="#switchToTab1FromTab2" prefHeight="30.0" prefWidth="87.0" style="-fx-background-radius: 20PX; -fx-background-color: #0e194d;" text="Back" textAlignment="CENTER" textFill="WHITE">
+                        <Button layoutX="762.0" layoutY="476.0" mnemonicParsing="false" onAction="#switchToTab1FromTab2" prefHeight="30.0" prefWidth="87.0" style="-fx-background-radius: 20PX; -fx-background-color: #0e194d;" text="Back" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="12.0" />
                            </font></Button>
@@ -205,7 +205,7 @@
                            <font>
                               <Font name="Arial Bold" size="12.0" />
                            </font></Button>
-                        <ImageView fitHeight="64.0" fitWidth="57.0" layoutX="64.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="64.0" fitWidth="57.0" layoutX="64.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@img/dostLogo2.png" />
                            </image>
@@ -255,9 +255,9 @@
                               <Image url="@img/7.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="18.0" fitWidth="39.0" layoutX="30.0" layoutY="492.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="17.0" fitWidth="15.0" layoutX="41.0" layoutY="494.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@img/about-us.png" />
+                              <Image url="@img/about_us_icon.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="18.0" fitWidth="39.0" layoutX="37.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
@@ -270,7 +270,7 @@
                               <Font name="Arial" size="12.0" />
                            </font>
                         </Text>
-                        <Hyperlink fx:id="about_us1" layoutX="54.0" layoutY="490.0" onAction="#about_us" text="About Us" textFill="WHITE">
+                        <Hyperlink fx:id="about_us1" layoutX="65.0" layoutY="490.0" onAction="#about_us" text="About Us" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="12.0" />
                            </font>
