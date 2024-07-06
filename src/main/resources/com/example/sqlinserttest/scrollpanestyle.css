@@ -1,0 +1,16 @@
+
+.scroll-pane .scroll-bar:horizontal .thumb {
+    -fx-background-color: linear-gradient(to bottom left, #c8c8c8, #06002f); /* Change to desired color */
+}
+
+.scroll-pane .scroll-bar:horizontal .track {
+    -fx-background-color: #ffffff; /* Change to desired color */
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: linear-gradient(to bottom left, #c8c8c8, #06002f); /* Change to desired color */
+}
+
+.scroll-pane .scroll-bar:vertical .track {
+    -fx-background-color: #ffffff; /* Change to desired color */
+}

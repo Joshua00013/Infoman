@@ -1,0 +1,77 @@
+/* Default style for all tabs */
+.tab-pane .tab {
+    -fx-background-color: transparent; /* Transparent background */
+    -fx-text-fill: #999999; /* Gray text color for non-selected tabs */
+    -fx-font-family: "Arial";
+}
+
+/* Style for selected tab */
+.tab-pane .tab:selected {
+    -fx-background-color:linear-gradient(to bottom right, #272b3f, #97a1a4); /* Background for selected tab */
+    -fx-background-radius: 5px 5px 0 0;
+    -fx-text-fill: white; /* Text color for selected tab */
+}
+
+/* Adjust text color specifically for tab labels */
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: white; /* Text color for selected tab label */
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #999999; /* Gray text color for tab labels */
+}
+
+
+/* Default style for buttons */
+.button {
+    -fx-background-color: #000231; /* Green background */
+    -fx-text-fill: white; /* White text */
+    -fx-font-size: 14px; /* Font size */
+    -fx-font-family: "Arial";
+    -fx-padding: 8px 16px; /* Padding */
+    -fx-background-radius: 5px; /* Rounded corners */
+    -fx-border-color: #000919; /* Border color */
+    -fx-border-width: 1px; /* Border width */
+    -fx-cursor: hand; /* Cursor style */
+    -fx-background-radius: 15px;
+}
+
+/* Hover effect for buttons */
+.button:hover {
+    -fx-background-color: #035400; /* Darker green on hover */
+}
+
+/* Pressed effect for buttons */
+.button:pressed {
+    -fx-background-color: #2E7D32; /* Slightly darker green when pressed */
+    -fx-border-color: #1B5E20; /* Darker border color when pressed */
+}
+
+
+
+
+
+
+.button_2 {
+    -fx-background-color: #000231; /* Green background */
+    -fx-text-fill: white; /* White text */
+    -fx-font-size: 14px; /* Font size */
+    -fx-font-family: "Arial";
+    -fx-padding: 8px 16px; /* Padding */
+    -fx-background-radius: 5px; /* Rounded corners */
+    -fx-border-color: #000919; /* Border color */
+    -fx-border-width: 1px; /* Border width */
+    -fx-cursor: hand; /* Cursor style */
+    -fx-background-radius: 15px;
+}
+
+/* Hover effect for buttons */
+.button_2:hover {
+    -fx-background-color: #9b0000; /* Darker green on hover */
+}
+
+/* Pressed effect for buttons */
+.button_2:pressed {
+    -fx-background-color: #2E7D32; /* Slightly darker green when pressed */
+    -fx-border-color: #1B5E20; /* Darker border color when pressed */
+}
