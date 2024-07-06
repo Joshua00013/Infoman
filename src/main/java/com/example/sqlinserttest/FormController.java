@@ -14,6 +14,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Button;
 
 import java.awt.*;
 import java.net.URI;
@@ -285,6 +286,11 @@ public class FormController implements Initializable {
     @FXML
     void submit(ActionEvent event) {
         try {
+            if (validateFields() == true){
+                DBUtils.errorDialogue("Error", "Please fill in all required fields.");
+                return;
+            }
+
             DBUtils.establishConnection();
 
             String selectedScholarship = scholarshipChoiceBox.getValue();
@@ -344,6 +350,36 @@ public class FormController implements Initializable {
         uniname.clear();
         course.clear();
         birthOrder.clear();
+    }
+
+    @FXML
+    private Button submitButton;
+
+    private boolean validateFields() {
+        boolean disableSubmit = name.getText().isEmpty() ||
+                birthdayPicker.getValue() == null ||
+                birthplace.getText().isEmpty() ||
+                citizenship.getText().isEmpty() ||
+                contactno.getText().isEmpty() ||
+                course.getText().isEmpty() ||
+                permAddress.getText().isEmpty() ||
+                siblings.getText().isEmpty() ||
+                uniAddress.getText().isEmpty() ||
+                uniname.getText().isEmpty() ||
+                birthOrder.getText().isEmpty() ||
+                mName.getText().isEmpty() ||
+                mEdu.getText().isEmpty() ||
+                mOccu.getText().isEmpty() ||
+                mEmployee.getText().isEmpty() ||
+                mIncome.getText().isEmpty() ||
+                fName.getText().isEmpty() ||
+                fEdu.getText().isEmpty() ||
+                fOccu.getText().isEmpty() ||
+                fEmployee.getText().isEmpty() ||
+                fIncome.getText().isEmpty();
+
+
+        return disableSubmit;
     }
 
 
