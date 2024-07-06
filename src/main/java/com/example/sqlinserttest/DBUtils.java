@@ -363,7 +363,7 @@ public class DBUtils {
     }
     public static void InsertGuardianDetails(String parentID, String applicantID, String parentName, String education, String occupation, String employee, String income, String relationship) {
         String query = "INSERT INTO parentguardian_info (ParentGuardianID, ApplicantID, Relationship, ParentGuardianName, EducAttainment, Occupation, EmployeeName, AnnualIncome) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?)";
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, parentID);
