@@ -55,7 +55,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="41.0" layoutX="211.0" layoutY="60.0" stroke="#0e194d" strokeType="INSIDE" style="-fx-fill: #0e194d; -fx-arc-height: 30px; -fx-arc-width: 30px;" width="782.0" />
             <ImageView fitHeight="567.0" fitWidth="214.0" layoutX="-8.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/DOST%20(3).png" />
+                  <Image url="@img/DOST (3).png" />
                </image>
             </ImageView>
                 <Button layoutX="886.0" layoutY="517.0" mnemonicParsing="false" onAction="#submit" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: #0e194d; -fx-background-radius: 20px;" text="Submit" textFill="WHITE">

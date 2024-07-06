@@ -49,7 +49,7 @@
          <children>
             <ImageView fitHeight="567.0" fitWidth="214.0" layoutX="9.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0">
                <image>
-                  <Image url="@img/DOST%20(3).png" />
+                  <Image url="@img/DOST (3).png" />
                </image>
             </ImageView>
             <Button layoutX="66.0" layoutY="513.0" mnemonicParsing="false" onAction="#switchToHomepage1" style="-fx-background-color: transparent; -fx-font-family: poppins;" text="Back" textFill="WHITE" AnchorPane.bottomAnchor="28.600000000000023" AnchorPane.leftAnchor="66.0" />
