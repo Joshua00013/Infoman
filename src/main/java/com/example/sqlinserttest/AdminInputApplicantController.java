@@ -11,6 +11,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -138,9 +139,61 @@ public class AdminInputApplicantController implements Initializable {
                 System.out.println("Failed to add applicant.");
             }
         } catch (NumberFormatException e) {
+            DBUtils.errorDialogue("Error","Please check your input!");
             System.err.println("Error: Invalid number format for Birth Order.");
             e.printStackTrace();
         }
+        catch (Exception e){
+            DBUtils.errorDialogue("Error", e.getMessage());
+            System.out.println("An error has occured!");
+        }
 
     }
+    @FXML
+    public void checkInt(KeyEvent event) {
+        // Get the character that was typed
+        String character = event.getCharacter();
+
+        // Check if the character is not a digit
+        if (!character.matches("[0-9.]")) {
+            // If not a digit, prevent the character from being added to the text
+            TextField textField = (TextField) event.getSource();
+            int caretPosition = textField.getCaretPosition();
+            int anchor = textField.getAnchor();
+
+            // Remove the typed character from the text
+            String text = textField.getText();
+            if (caretPosition > 0 && caretPosition <= text.length()) {
+                String newText = text.substring(0, caretPosition - 1) + text.substring(caretPosition);
+                textField.setText(newText);
+                textField.positionCaret(anchor - 1);
+            }
+        }
+    }
+
+
+
+    @FXML
+    public void checkElevenDigits(KeyEvent event) {
+        // Get the character that was typed
+        String character = event.getCharacter();
+        String currentText = contactno.getText();
+        System.out.println(currentText.length());
+        // Check if the character is not a digit
+        if (!character.matches("[0-9]")|| currentText.length() > 11) {
+            // If not a digit, prevent the character from being added to the text
+            TextField textField = (TextField) event.getSource();
+            int caretPosition = textField.getCaretPosition();
+            int anchor = textField.getAnchor();
+
+            // Remove the typed character from the text
+            String text = textField.getText();
+            if (caretPosition > 0 && caretPosition <= text.length()) {
+                String newText = text.substring(0, caretPosition - 1) + text.substring(caretPosition);
+                textField.setText(newText);
+                textField.positionCaret(anchor - 1);
+            }
+        }
+    }
+
 }

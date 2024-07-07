@@ -80,7 +80,7 @@
                <font>
                   <Font name="Arial" size="12.0" />
                </font></Text>
-                <TextField fx:id="contactno" layoutX="442.0" layoutY="182.0" prefHeight="26.0" promptText="Enter contact number" style="-fx-background-radius: 20px; -fx-background-color: #E8E8E8;" />
+                <TextField fx:id="contactno" layoutX="442.0" layoutY="182.0" onKeyTyped="#checkElevenDigits" prefHeight="26.0" promptText="Enter contact number" style="-fx-background-radius: 20px; -fx-background-color: #E8E8E8;" />
                 <Text layoutX="344.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Number">
                <font>
                   <Font name="Arial" size="12.0" />
@@ -123,8 +123,8 @@
                 <TextField fx:id="uniname" layoutX="608.0" layoutY="331.0" prefHeight="26.0" prefWidth="373.0" promptText="Enter University name" style="-fx-background-radius: 20px; -fx-background-color: #E8E8E8;" />
                 <TextField fx:id="uniAddress" layoutX="334.0" layoutY="382.0" prefHeight="26.0" prefWidth="345.0" promptText="Enter University Address" style="-fx-background-radius: 20px; -fx-background-color: #E8E8E8;" />
                 <TextField fx:id="permAddress" layoutX="544.0" layoutY="281.0" prefHeight="26.0" prefWidth="439.0" promptText="Enter Permanent Address" style="-fx-background-radius: 20px; -fx-background-color: #E8E8E8;" />
-                <TextField fx:id="siblings" layoutX="714.0" layoutY="182.0" prefHeight="26.0" prefWidth="94.0" style="-fx-background-radius: 20px; -fx-background-color: #E8E8E8;" />
-                <TextField fx:id="birthOrder" layoutX="887.0" layoutY="182.0" prefHeight="26.0" prefWidth="97.0" promptText="Enter birth order" style="-fx-background-radius: 20px; -fx-background-color: #E8E8E8;" />
+                <TextField fx:id="siblings" layoutX="714.0" layoutY="182.0" onKeyTyped="#checkInt" prefHeight="26.0" prefWidth="94.0" style="-fx-background-radius: 20px; -fx-background-color: #E8E8E8;" />
+                <TextField fx:id="birthOrder" layoutX="887.0" layoutY="182.0" onKeyTyped="#checkInt" prefHeight="26.0" prefWidth="97.0" promptText="Enter birth order" style="-fx-background-radius: 20px; -fx-background-color: #E8E8E8;" />
                 <Button layoutX="785.0" layoutY="492.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: #0e194d; -fx-background-radius: 20px;" text="Back" textFill="WHITE" />
             <ImageView fitHeight="567.0" fitWidth="217.0" layoutX="-13.0" pickOnBounds="true" preserveRatio="true">
                <image>

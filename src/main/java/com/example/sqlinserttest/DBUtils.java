@@ -405,6 +405,46 @@ public class DBUtils {
         }
     }
 
+    public static boolean CheckParent(String applicantID, String relationship) {
+        String query = "SELECT COUNT(*) FROM parentguardian_info WHERE ApplicantID = ? AND Relationship = ?";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, applicantID);
+            preparedStatement.setString(2,relationship);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    int count = resultSet.getInt(1);
+                    return count > 0; // Returns true if count is greater than 0
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error checking mother for applicant ID " + applicantID + ": " + e.getMessage());
+            errorDialogue("SQL Error", e.getMessage());
+            e.printStackTrace();
+        }
+        return false; // Return false if no mother found or in case of an error
+    }
+
+    public static boolean CheckGuardian(String applicantID) {
+        String query = "SELECT COUNT(*) FROM parentguardian_info WHERE ApplicantID = ? AND Relationship NOT IN ('Father', 'Mother')";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, applicantID);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    int count = resultSet.getInt(1);
+                    return count > 0; // Returns true if count is greater than 0
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error checking mother for applicant ID " + applicantID + ": " + e.getMessage());
+            errorDialogue("SQL Error", e.getMessage());
+            e.printStackTrace();
+        }
+        return false; // Return false if no mother found or in case of an error
+    }
+
+
 
 
 }

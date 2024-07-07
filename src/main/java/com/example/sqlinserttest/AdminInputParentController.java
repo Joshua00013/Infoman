@@ -2,20 +2,15 @@ package com.example.sqlinserttest;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.time.LocalDate;
-
-public class AdminInputParent {
+public class AdminInputParentController {
 
     @FXML
     void closeWindow(ActionEvent event) {
@@ -114,14 +109,49 @@ public class AdminInputParent {
         DBUtils.establishConnection();
 
         if (!mID.getText().isEmpty()) {
-            DBUtils.InsertParentDetails(mID.getText(), applicantID.getText(), mName.getText(), mEdu.getText(), mOccu.getText(),mEmployee.getText(), mIncome.getText(), "Mother");
-        }
-        if (!fID.getText().isEmpty()) {
-            DBUtils.InsertParentDetails(fID.getText(), applicantID.getText(), fName.getText(), fEdu.getText(), fOccu.getText(),fEmployee.getText(), fIncome.getText(), "Father");
-        }
-        if (!gEdu.getText().isEmpty()) {
-            DBUtils.InsertGuardianDetails(gID.getText(), applicantID.getText(), gName.getText(), gEdu.getText(), gOccu.getText(),gEmployee.getText(), gIncome.getText(), gRelation.getText());
+            if (DBUtils.CheckParent(applicantID.getText(), "Mother") == false) {
+                DBUtils.InsertParentDetails(mID.getText(), applicantID.getText(), mName.getText(), mEdu.getText(), mOccu.getText(), mEmployee.getText(), mIncome.getText(), "Mother");
+            } else {
+                DBUtils.errorDialogue("Error!", "Applicant already has an existing mother!");
+            }
         }
 
+        if (!fID.getText().isEmpty()) {
+            if (DBUtils.CheckParent(applicantID.getText(), "Father") == false) {
+                DBUtils.InsertParentDetails(fID.getText(), applicantID.getText(), fName.getText(), fEdu.getText(), fOccu.getText(), fEmployee.getText(), fIncome.getText(), "Father");
+            } else {
+                DBUtils.errorDialogue("Error!", "Applicant already has an existing father!");
+            }
+        }
+
+        if (!gEdu.getText().isEmpty()) {
+            if (DBUtils.CheckGuardian(applicantID.getText()) == false) {
+                DBUtils.InsertGuardianDetails(gID.getText(), applicantID.getText(), gName.getText(), gEdu.getText(), gOccu.getText(), gEmployee.getText(), gIncome.getText(), gRelation.getText());
+            } else {
+                DBUtils.errorDialogue("Error!", "Applicant already has an existing guardian!");
+            }
+        }
+
+    }
+    @FXML
+    public void checkInt(KeyEvent event) {
+        // Get the character that was typed
+        String character = event.getCharacter();
+
+        // Check if the character is not a digit
+        if (!character.matches("[0-9.]")) {
+            // If not a digit, prevent the character from being added to the text
+            TextField textField = (TextField) event.getSource();
+            int caretPosition = textField.getCaretPosition();
+            int anchor = textField.getAnchor();
+
+            // Remove the typed character from the text
+            String text = textField.getText();
+            if (caretPosition > 0 && caretPosition <= text.length()) {
+                String newText = text.substring(0, caretPosition - 1) + text.substring(caretPosition);
+                textField.setText(newText);
+                textField.positionCaret(anchor - 1);
+            }
+        }
     }
 }
