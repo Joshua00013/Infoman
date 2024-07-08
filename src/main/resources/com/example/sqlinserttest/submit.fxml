@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="Borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#bp_dragged" onMousePressed="#bp_pressed" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.SubmittedController">
+<BorderPane fx:id="Borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#bp_dragged" onMousePressed="#bp_pressed" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.SubmittedController">
    <top>
       <StackPane prefHeight="23.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
@@ -43,7 +43,7 @@
                <Image url="@img/submitPage.png" />
             </image>
          </ImageView>
-         <Button fx:id="homeback" layoutX="403.0" layoutY="377.0" mnemonicParsing="false" onAction="#switchToHomepage1" prefHeight="28.0" prefWidth="194.0" style="-fx-background-color: #FCFCFC; -fx-text-fill: #004AAD; -fx-border-color: #B9B9B5;" text="Back to Homepgae" textFill="WHITE">
+         <Button fx:id="homeback" layoutX="403.0" layoutY="377.0" mnemonicParsing="false" onAction="#switchToHomepage1" prefHeight="28.0" prefWidth="194.0" style="-fx-background-color: #FCFCFC; -fx-text-fill: #004AAD; -fx-border-color: #B9B9B5;" text="Back to Homepage" textFill="WHITE">
             <font>
                <Font name="Arial Bold" size="8.0" />
             </font>
