@@ -134,6 +134,7 @@ public class AdminInputApplicantController implements Initializable {
                     uniname.getText(), uniAddress.getText(), passport.getValue());
 
             if (applicantId != -1) {
+                DBUtils.adminSuccessDialogue();
                 System.out.println("Applicant added successfully with ID: " + applicantId);
             } else {
                 System.out.println("Failed to add applicant.");

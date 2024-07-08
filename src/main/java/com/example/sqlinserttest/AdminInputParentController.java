@@ -107,32 +107,40 @@ public class AdminInputParentController {
     @FXML
     void submit(ActionEvent event) {
         DBUtils.establishConnection();
+        boolean insertionSuccess = false;
 
         if (!mID.getText().isEmpty()) {
-            if (DBUtils.CheckParent(applicantID.getText(), "Mother") == false) {
+            if (!DBUtils.CheckParent(applicantID.getText(), "Mother")) {
                 DBUtils.InsertParentDetails(mID.getText(), applicantID.getText(), mName.getText(), mEdu.getText(), mOccu.getText(), mEmployee.getText(), mIncome.getText(), "Mother");
+                insertionSuccess = true;
             } else {
                 DBUtils.errorDialogue("Error!", "Applicant already has an existing mother!");
             }
         }
 
         if (!fID.getText().isEmpty()) {
-            if (DBUtils.CheckParent(applicantID.getText(), "Father") == false) {
+            if (!DBUtils.CheckParent(applicantID.getText(), "Father")) {
                 DBUtils.InsertParentDetails(fID.getText(), applicantID.getText(), fName.getText(), fEdu.getText(), fOccu.getText(), fEmployee.getText(), fIncome.getText(), "Father");
+                insertionSuccess = true;
             } else {
                 DBUtils.errorDialogue("Error!", "Applicant already has an existing father!");
             }
         }
 
         if (!gEdu.getText().isEmpty()) {
-            if (DBUtils.CheckGuardian(applicantID.getText()) == false) {
+            if (!DBUtils.CheckGuardian(applicantID.getText())) {
                 DBUtils.InsertGuardianDetails(gID.getText(), applicantID.getText(), gName.getText(), gEdu.getText(), gOccu.getText(), gEmployee.getText(), gIncome.getText(), gRelation.getText());
+                insertionSuccess = true;
             } else {
                 DBUtils.errorDialogue("Error!", "Applicant already has an existing guardian!");
             }
         }
 
+        if (insertionSuccess) {
+            DBUtils.adminSuccessDialogue();
+        }
     }
+
     @FXML
     public void checkInt(KeyEvent event) {
         // Get the character that was typed

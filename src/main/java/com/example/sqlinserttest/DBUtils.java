@@ -15,6 +15,13 @@ public class DBUtils {
         alert.setHeaderText(title);
         alert.showAndWait();
     }
+    public static void adminSuccessDialogue(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText("Information submitted");
+        alert.setContentText("Information added successfully!");
+        alert.showAndWait();
+    }
     public static void successDialogue(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Success");
