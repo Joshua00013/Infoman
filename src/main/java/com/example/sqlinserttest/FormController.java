@@ -1,15 +1,5 @@
 package com.example.sqlinserttest;
 
-import java.awt.Desktop;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.time.LocalDate;
-import java.util.ResourceBundle;
-
-import javax.swing.JOptionPane;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,20 +7,33 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Button;
+
+import java.awt.*;
+import java.net.URI;
+import java.net.URISyntaxException;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.ResourceBundle;
+
 public class FormController implements Initializable {
+    public void redirectToSubmittedPage(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("submit.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     public void checkInt(KeyEvent event) {
         // Get the character that was typed
@@ -125,14 +128,6 @@ public class FormController implements Initializable {
     void switchToForm1(ActionEvent event) throws IOException{
         root = FXMLLoader.load(getClass().getResource("formgui.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-        public void redirectToSubmittedPage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("submit.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -298,6 +293,11 @@ public class FormController implements Initializable {
     @FXML
     void submit(ActionEvent event) {
         try {
+            if (validateFields() == true){
+                DBUtils.errorDialogue("Error", "Please fill in all required fields.");
+                return;
+            }
+
             DBUtils.establishConnection();
 
             String selectedScholarship = scholarshipChoiceBox.getValue();
@@ -316,36 +316,18 @@ public class FormController implements Initializable {
             if (!gEdu.getText().isEmpty()) {
                 DBUtils.addParentDetails(applicantID, this, gName.getText(), gEdu.getText(), gOccu.getText(),gEmployee.getText(), gIncome.getText(), gRelation.getText());
             }
-            
-            
-            // DBUtils.successDialogue();
 
-                JOptionPane.showMessageDialog(null, 
-                                                "Submit Complete!", 
-                                                "Success", 
-                                                JOptionPane.INFORMATION_MESSAGE);
-
+            DBUtils.successDialogue();
             clearFields();
-            DBUtils.closeConnection();
-
-            // Redirect to the submitted page
             redirectToSubmittedPage(event);
+            DBUtils.closeConnection();
+        }catch (NullPointerException e){
+            DBUtils.errorDialogue("Null Pointer Exception", "Please fill up all the required fields!");
+        } catch (IOException e) {
+            DBUtils.errorDialogue("IOException", "An error has occured!");
+        }
 
-        } catch (NullPointerException e) {                                                 // null exception
-        JOptionPane.showMessageDialog(null, 
-                                  "Please fill up all the required fields!", 
-                                  "Null Pointer Exception", 
-                                  JOptionPane.ERROR_MESSAGE);
-        } catch (Exception e) {                                                           // handle any other exceptions
-        JOptionPane.showMessageDialog(null, 
-                                  "An error occurred: " + e.getMessage(), 
-                                  "Error", 
-                                  JOptionPane.ERROR_MESSAGE);
-        e.printStackTrace();
     }
- }
-
-
     private void clearFields() {
         name.clear();
         scholarshipChoiceBox.getSelectionModel().clearSelection();
