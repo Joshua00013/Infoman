@@ -52,13 +52,10 @@
                   <Image url="@img/DOST (3).png" />
                </image>
             </ImageView>
-            <Button layoutX="64.8" layoutY="515.4" mnemonicParsing="false" onAction="#switchToHomepage1" style="-fx-background-color: transparent;" styleClass="button" text="Back" textFill="WHITE" AnchorPane.bottomAnchor="28.600000000000023" AnchorPane.leftAnchor="64.8">
+            <Button layoutX="66.0" layoutY="513.0" mnemonicParsing="false" onAction="#switchToHomepage1" styleClass="button" text="Back" textFill="WHITE" AnchorPane.bottomAnchor="28.600000000000023" AnchorPane.leftAnchor="66.0" />
+            <Button layoutX="58.0" layoutY="484.0" mnemonicParsing="false" onAction="#refreshButtonPressed" styleClass="button" text="Refresh" textFill="WHITE">
                <font>
-                  <Font name="Arial" size="12.0" />
-               </font></Button>
-            <Button layoutX="58.0" layoutY="486.0" mnemonicParsing="false" onAction="#refreshButtonPressed" style="-fx-background-color: transparent;" styleClass="button" text="Refresh" textFill="WHITE">
-               <font>
-                  <Font name="Arial" size="12.0" />
+                  <Font name="Arial Bold" size="12.0" />
                </font>
             </Button>
             <ImageView fitHeight="64.0" fitWidth="57.0" layoutX="64.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
@@ -83,26 +80,26 @@
                                  <children>
                                     <ScrollPane prefHeight="538.0" prefWidth="774.0" style="-fx-hbar-policy: always;" stylesheets="@scrollpanestyle.css">
                                        <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="447.0" prefWidth="2853.0" stylesheets="@tab.css">
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="447.0" prefWidth="1503.0" stylesheets="@tab.css">
                                              <children>
-                                                <TableView fx:id="applicantTable" fixedCellSize="20.0" prefHeight="444.0" prefWidth="2853.0" style="-fx-font-family: poppins;" stylesheets="@scrollpanestyle.css">
+                                                <TableView fx:id="applicantTable" fixedCellSize="20.0" prefHeight="444.0" prefWidth="1589.0" style="-fx-font-family: poppins;" stylesheets="@scrollpanestyle.css">
                                                    <columns>
                                                       <TableColumn fx:id="idCol" minWidth="12.0" prefWidth="95.4667175412178" text="ApplicantID" />
                                                       <TableColumn fx:id="scholarshipIdCol" prefWidth="102.13337707519531" text="ScholarshipID" />
-                                                      <TableColumn fx:id="nameCol" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="150.0" text="Name" />
+                                                      <TableColumn fx:id="nameCol" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="73.066650390625" text="Name" />
                                                       <TableColumn fx:id="sexCol" minWidth="0.0" prefWidth="30.0" text="Sex" />
                                                       <TableColumn fx:id="birthDateCol" prefWidth="75.0" text="Birthday" />
-                                                      <TableColumn fx:id="birthPlaceCol" minWidth="15.0" prefWidth="120.0" text="BirthPlace" />
+                                                      <TableColumn fx:id="birthPlaceCol" minWidth="15.0" prefWidth="92.79998779296875" text="BirthPlace" />
                                                       <TableColumn fx:id="citizenshipCol" prefWidth="71.20001220703125" text="Citizenship" />
                                                       <TableColumn fx:id="dualCitizenshipStatusCol" prefWidth="107.9998779296875" text="DualCitizStatus" />
                                                       <TableColumn fx:id="contactNoCol" prefWidth="90.4000244140625" text="ContactNo" />
-                                                      <TableColumn fx:id="emailAddressCol" maxWidth="5100.0" prefWidth="200.0" text="EmailAddress" />
-                                                      <TableColumn fx:id="permAddressCol" prefWidth="520.0" text="PermAddress" />
+                                                      <TableColumn fx:id="emailAddressCol" maxWidth="5100.0" prefWidth="107.9998779296875" text="EmailAddress" />
+                                                      <TableColumn fx:id="permAddressCol" prefWidth="107.9998779296875" text="PermAddress" />
                                                       <TableColumn fx:id="noSiblingsCol" prefWidth="75.0" text="NoSiblings" />
                                                       <TableColumn fx:id="birthOrderCol" prefWidth="75.0" text="BirthOrder" />
-                                                      <TableColumn fx:id="courseCol" prefWidth="200.0" text="Course" />
-                                                      <TableColumn fx:id="uniNameCol" prefWidth="300.0" text="UnivName" />
-                                                      <TableColumn fx:id="uniAddressCol" prefWidth="520.0" text="UnivAddress" />
+                                                      <TableColumn fx:id="courseCol" prefWidth="75.0" text="Course" />
+                                                      <TableColumn fx:id="uniNameCol" prefWidth="75.0" text="UnivName" />
+                                                      <TableColumn fx:id="uniAddressCol" prefWidth="139.0" text="UnivAddress" />
                                                       <TableColumn fx:id="passportStatusCol" prefWidth="115.0" text="PassportStatus" />
                                                    </columns>
                                                    <styleClass>
@@ -130,17 +127,17 @@
                                  <children>
                                     <ScrollPane prefHeight="538.0" prefWidth="774.0" stylesheets="@scrollpanestyle.css">
                                        <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="444.0" prefWidth="1100.0" style="-fx-background-color: white;">
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="444.0" prefWidth="991.0" style="-fx-background-color: white;">
                                              <children>
-                                                <TableView fx:id="parenttable" layoutY="1.0" prefHeight="478.0" prefWidth="1100.0">
+                                                <TableView fx:id="parenttable" layoutY="1.0" prefHeight="444.0" prefWidth="1006.0">
                                                    <columns>
                                                       <TableColumn fx:id="parentidcol" prefWidth="116.79995727539062" text="ParentGuardianID" />
                                                       <TableColumn fx:id="applicantidcol" prefWidth="90.13320922851562" text="ApplicantID" />
-                                                      <TableColumn fx:id="parentnamecol" prefWidth="180.0" text="ParentGuardianName" />
+                                                      <TableColumn fx:id="parentnamecol" prefWidth="179.4666290283203" text="ParentGuardianName" />
                                                       <TableColumn fx:id="relationcol" prefWidth="98.40008544921875" text="Relationship" />
                                                       <TableColumn fx:id="educcol" prefWidth="133.59991455078125" text="EducAttainment" />
-                                                      <TableColumn fx:id="occucol" prefWidth="150.0" text="Occupation" />
-                                                      <TableColumn fx:id="employeecol" prefWidth="180.0" text="EmployeeName" />
+                                                      <TableColumn fx:id="occucol" prefWidth="143.73345947265625" text="Occupation" />
+                                                      <TableColumn fx:id="employeecol" prefWidth="100.0" text="EmployeeName" />
                                                       <TableColumn fx:id="incomecol" prefWidth="155.0" text="AnnualIncome" />
                                                    </columns>
                                                 </TableView>
