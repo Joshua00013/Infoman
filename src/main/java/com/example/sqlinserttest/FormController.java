@@ -27,6 +27,13 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class FormController implements Initializable {
+    public void redirectToSubmittedPage(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("submit.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     public void checkInt(KeyEvent event) {
         // Get the character that was typed
@@ -309,11 +316,15 @@ public class FormController implements Initializable {
             if (!gEdu.getText().isEmpty()) {
                 DBUtils.addParentDetails(applicantID, this, gName.getText(), gEdu.getText(), gOccu.getText(),gEmployee.getText(), gIncome.getText(), gRelation.getText());
             }
+
             DBUtils.successDialogue();
             clearFields();
+            redirectToSubmittedPage(event);
             DBUtils.closeConnection();
         }catch (NullPointerException e){
             DBUtils.errorDialogue("Null Pointer Exception", "Please fill up all the required fields!");
+        } catch (IOException e) {
+            DBUtils.errorDialogue("IOException", "An error has occured!");
         }
 
     }

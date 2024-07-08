@@ -8,13 +8,12 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="Borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#bp_dragged" onMousePressed="#bp_pressed" prefHeight="657.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.SubmittedController">
+<BorderPane fx:id="Borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#bp_dragged" onMousePressed="#bp_pressed" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sqlinserttest.SubmittedController">
    <top>
       <StackPane prefHeight="23.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER" />
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1000.0" style="-fx-background-color: black;" StackPane.alignment="TOP_CENTER" />
             <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: black;" StackPane.alignment="TOP_RIGHT">
                <children>
                   <ImageView fx:id="mnmbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#mnmclick" pickOnBounds="true" preserveRatio="true">
@@ -38,27 +37,17 @@
       </StackPane>
    </top>
    <left>
-      <AnchorPane prefHeight="622.0" prefWidth="901.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
-         <Text fill="#00aeff" layoutX="378.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You have ">
-            <font>
-               <Font name="Arial Black" size="26.0" />
-            </font>
-         </Text>
-         <Button fx:id="homeback" layoutX="490.0" layoutY="311.0" mnemonicParsing="false" onAction="#switchToHomepage1" style="-fx-background-color: #00AEEF;" text="Back" textFill="WHITE">
-            <font>
-               <Font name="System Bold" size="20.0" />
-            </font>
-         </Button>
-         <Text fill="#fada35" layoutX="514.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="submitted!">
-            <font>
-               <Font name="Arial Black" size="26.0" />
-            </font>
-         </Text>
-         <ImageView fitHeight="150.0" fitWidth="33.0" layoutX="320.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
+      <AnchorPane prefHeight="565.0" prefWidth="1000.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <ImageView fitHeight="567.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@img/DOSTlogo.png" />
+               <Image url="@img/submitPage.png" />
             </image>
          </ImageView>
+         <Button fx:id="homeback" layoutX="403.0" layoutY="377.0" mnemonicParsing="false" onAction="#switchToHomepage1" prefHeight="28.0" prefWidth="194.0" style="-fx-background-color: #FCFCFC; -fx-text-fill: #004AAD; -fx-border-color: #B9B9B5;" text="Back to Homepgae" textFill="WHITE">
+            <font>
+               <Font name="Arial Bold" size="8.0" />
+            </font>
+         </Button>
       </AnchorPane>
    </left>
 </BorderPane>
