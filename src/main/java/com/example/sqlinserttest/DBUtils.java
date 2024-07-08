@@ -346,7 +346,7 @@ public class DBUtils {
     }
     public static void updateParent(applicantParent updatedParent) {
         String sql = "UPDATE parentguardian_info SET ParentGuardianName = ?, EducAttainment = ?, " +
-                "Occupation = ?,EmployeeName = ?, AnnualIncome = ? WHERE ParentGuardianID = ?";
+                "Occupation = ?,EmployeeName = ?, AnnualIncome = ? , Relationship = ? WHERE ParentGuardianID = ?";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, updatedParent.getParentname());
@@ -354,7 +354,9 @@ public class DBUtils {
             statement.setString(3, updatedParent.getOccupation());
             statement.setString(4, updatedParent.getEmployee());
             statement.setString(5, updatedParent.getAnnualincome());
-            statement.setInt(6, updatedParent.getParentid());
+            statement.setString(6, updatedParent.getRelationship());
+            statement.setInt(7, updatedParent.getParentid());
+
 
             int rowsUpdated = statement.executeUpdate();
 
