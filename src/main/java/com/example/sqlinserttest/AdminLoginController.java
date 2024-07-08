@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
@@ -40,32 +41,29 @@ public class AdminLoginController {
     private double y = 0;
     private double x = 0;
 
-
-
     @FXML
-    void closeclick(MouseEvent event) {
+    public void closeclick(MouseEvent event) {
         javafx.application.Platform.exit();
     }
 
     @FXML
-    void mnmclick(MouseEvent event) {
+    public void mnmclick(MouseEvent event) {
         Stage stage = (Stage) mnmbtn.getScene().getWindow();
         stage.setIconified(true);
     }
 
     @FXML
-    void stackpane_dragged(MouseEvent event) {
+    public void stackpane_dragged(MouseEvent event) {
         Stage stage = (Stage) stackpane.getScene().getWindow();
         stage.setY(event.getScreenY() - y);
         stage.setX(event.getScreenX() - x);
     }
 
     @FXML
-    void stackpane_pressed(MouseEvent event) {
+    public void stackpane_pressed(MouseEvent event) {
         x = event.getSceneX();
         y = event.getSceneY();
     }
-
 
     public void switchToAdmin1(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("admin.fxml"));
@@ -83,4 +81,23 @@ public class AdminLoginController {
         stage.show();
     }
 
+    @FXML
+    public void checkLogin(ActionEvent event) throws IOException {
+        String username = userTextfield.getText();
+        String password = passwordTextfield.getText();
+
+        if ("admin".equals(username) && "password".equals(password)) {
+            switchToAdmin1(event);
+        } else {
+            showErrorAlert("Error", "Invalid username or password!");
+        }
+    }
+
+    private void showErrorAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
 }

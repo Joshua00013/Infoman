@@ -28,7 +28,7 @@
             <font>
                <Font size="15.0" />
             </font></PasswordField>
-         <Button fx:id="loginButton" layoutX="645.0" layoutY="387.0" mnemonicParsing="false" onAction="#switchToAdmin1" prefHeight="37.0" prefWidth="193.0" style="-fx-background-color: #0e194d; -fx-background-radius: 20px;" text="Login" textFill="WHITE">
+         <Button fx:id="loginButton" layoutX="645.0" layoutY="387.0" mnemonicParsing="false" onAction="#checkLogin" prefHeight="37.0" prefWidth="193.0" style="-fx-background-color: #0e194d; -fx-background-radius: 20px;" text="Login" textFill="WHITE">
             <font>
                <Font name="Arial Bold" size="20.0" />
             </font>
