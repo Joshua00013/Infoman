@@ -416,6 +416,11 @@ public class AdminController implements Initializable {
         List<applicantParent> parents = DBUtils.getAllParents();
         ObservableList<applicantParent> data = FXCollections.observableArrayList(parents);
 
+        System.out.println("Number of parents retrieved: " + data.size());
+        for (applicantParent parent : data) {
+            System.out.println(parent);
+        }
+
         parenttable.setItems(data);
 
         parentidcol.setCellValueFactory(new PropertyValueFactory<>("parentid"));

@@ -210,6 +210,7 @@ public class DBUtils {
 
             while (resultSet.next()) {
                 int parentid = resultSet.getInt("ParentGuardianID");
+                System.out.println(parentid);
                 int applicantid = resultSet.getInt("ApplicantID");
                 String parentname = resultSet.getString("ParentGuardianName");
                 String education = resultSet.getString("EducAttainment");
@@ -226,6 +227,12 @@ public class DBUtils {
             System.out.println("Error retrieving applicants: " + e.getMessage());
             errorDialogue("SQL Error", e.getMessage());
             e.printStackTrace();
+        }
+
+        // Debugging to check the data retrieval
+        System.out.println("Total parents retrieved from database: " + parents.size());
+        for (applicantParent parent : parents) {
+            System.out.println(parent);
         }
 
         return parents;

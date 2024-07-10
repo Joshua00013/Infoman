@@ -389,9 +389,20 @@ public class FormController implements Initializable {
                 fEmployee.getText().isEmpty() ||
                 fIncome.getText().isEmpty();
 
+        if (!disableSubmit) {
+            try {
+                int siblingsCount = Integer.parseInt(siblings.getText());
+                int birthOrderValue = Integer.parseInt(birthOrder.getText());
+                disableSubmit = siblingsCount + 1 < birthOrderValue;
+            } catch (NumberFormatException e) {
+                // Handle the case where siblings or birthOrder are not valid integers
+                disableSubmit = true;
+            }
+        }
 
         return disableSubmit;
     }
+
 
 
     public String getMotherName() {
